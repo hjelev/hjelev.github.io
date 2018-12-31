@@ -2,7 +2,7 @@
 layout: post
 title: How to translate your Flask site with Babel
 date:   2018-02-24
-categories: Python
+categories: python
 ---
 This article will show you how to translate your Fask site using the python module Babel on a Debian based system running python 3.
 
