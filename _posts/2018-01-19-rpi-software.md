@@ -2,7 +2,7 @@
 layout: post
 title: Software for Raspberry Pi
 date: 2018-01-19
-categories: Raspberry Pi
+categories: Raspberry-Pi
 ---
 
 Collection of software for raspberry pi
