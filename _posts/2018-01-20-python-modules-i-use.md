@@ -2,7 +2,7 @@
 layout: post
 title: Python Modules I Use
 date:   2018-01-20
-categories: Python
+categories: python
 ---
 
 - [Markdown](https://pypi.python.org/pypi/Markdown) - Python implementation of Markdown.
