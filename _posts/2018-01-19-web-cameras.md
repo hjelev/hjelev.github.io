@@ -2,7 +2,7 @@
 layout: post
 title: Live Webcam Feeds
 date: 2018-01-19
-categories: Webcams
+categories: webcams
 ---
 
 Collection of sites offering free live webcamera feeds from around the world
