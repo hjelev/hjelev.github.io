@@ -22,3 +22,15 @@ title: Categories
   </div>
 {% endfor %}
 </div>
+
+
+<div id="archives">
+{% for category in site.categories %}
+  <div class="archive-group">
+    {% capture category_name %}{{ category | first }}{% endcapture %}
+    <h3 class="category-head"><a href="{{ site.baseurl }}/category/{{ category_name }}" >{{ category_name }}</a></h3>
+    <a name="{{ category_name | slugize }}"></a>
+
+  </div>
+{% endfor %}
+</div>
