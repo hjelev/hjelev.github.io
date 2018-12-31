@@ -2,7 +2,7 @@
 layout: post
 title: OS for Raspberry Pi
 date: 2018-01-20
-categories: Raspberry Pi
+categories: raspberry-pi
 ---
 
 Collection of different OS Distributions for the SBC Raspberry Pi
