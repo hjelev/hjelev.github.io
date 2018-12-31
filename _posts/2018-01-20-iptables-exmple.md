@@ -2,7 +2,7 @@
 layout: post
 title: Basic IPTables Tutorial
 date: 2018-01-20
-categories: Linux Sysadmin
+categories: linux
 ---
 
 This is the iptables configuration I have used to secure my pihole instance before exposing it publicly.  
