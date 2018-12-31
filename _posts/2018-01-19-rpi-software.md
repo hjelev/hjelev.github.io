@@ -1,0 +1,18 @@
+---
+layout: post
+title: Software for Raspberry Pi
+date: 2018-01-19
+categories: Raspberry Pi
+---
+
+Collection of software for raspberry pi
+---------
+- [PiVPN](http://www.pivpn.io/) - Simplest OpenVPN setup and configuration, designed for Raspberry Pi.
+
+- [Pi-Hole](http://pi-hole.net/) - black hole for Internet advertisements.
+
+- [Home Assistant](https://home-assistant.io/) - open-source home automation platform running on Python 3. Track and control all devices at home and automate control. Installation in less than a minute.
+
+- [CUPS](http://www.instructables.com/id/Turn-any-printer-into-a-wireless-printer-with-a-Ra/?ALLSTEPS) - Turn any printer into a wireless printer with a Raspberry Pi
+
+[//]: # "- []() - "
