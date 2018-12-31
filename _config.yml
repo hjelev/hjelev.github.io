@@ -1,8 +1,8 @@
-title: John Smith
+title: MaxBlo.ga
 description: My Personal Blog
-author: John Smith
-logo: /hcz-jekyll-blog/static/img/avatar.png
-github: https://github.com/codeasashu
+author: Hristo Jelev
+logo: https://maxblo.ga/images/avatar2.jpg
+github: https://github.com/hjelev
 about: Freelance developer
 
 baseurl: ""
@@ -10,12 +10,8 @@ url: ""
 
 allowsearch: true
 
-disqus_shortname: aboutashu
-google_analytics: UA-72862926-1
-
-share:
-  twitter_username: \#
-  fb_appid: 000000000000
+disqus_shortname: 
+google_analytics: 
 
 
 enableTags: true
