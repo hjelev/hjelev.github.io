@@ -12,5 +12,5 @@ It is build with [Jekyll](https://jekyllrb.com/){:target="_blank"} and hosted on
 <form method="POST" action="https://formspree.io/jeleff@gmail.com">
   <input type="email" name="email" placeholder="Your email"><br>
   <textarea name="message" placeholder="Test Message"></textarea><br>
-  <button type="submit">Send Test</button><br>
+  <button type="submit">Send Message</button><br>
 </form>
