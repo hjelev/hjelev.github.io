@@ -31,6 +31,8 @@ ads blocking, malware protection and "Family protection" servers.
 * Preferred DNS server: **176.103.130.132**
 * Alternative DNS server: **176.103.130.134**
 
+![adguard dns](https://adguard.com/img/products/dns.png)
+
 ## PrivateDNS - EPSILON EIGHT 
 
 Block over 114k advertisement and malware-serving domains
