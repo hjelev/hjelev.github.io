@@ -24,9 +24,8 @@ Adguard.com offers ads filtering plus malware protection.
 
 * use these DNS servers if you want ads blocking and malware protection:
 
-176.103.130.130
-
-176.103.130.131
+    * Preferred DNS server *176.103.130.130*
+    * Alternative DNS server *176.103.130.131*
 
 * ads blocking, malware protection and "Family protection" servers.
 
@@ -99,23 +98,14 @@ You can also use this with one of the DNS providers mentioned above.
 
 ## Other DNS providers
 
-* Google 8.8.8.8: Private and unfiltered. Most popular option.
-* CloudFlare 1.1.1.1: Private and unfiltered. New player.
-* Quad9 9.9.9.9: Private and security aware. New player that blocks access to malicious domains.
-* OpenDNS 208.67.222.222: Old player that blocks malicious domains and offers the option to block adult content.
-* Norton DNS 199.85.126.20: Old player that blocks malicious domains and is integrated with their Antivirus.
-* CleanBrowsing 185.228.168.168: Private and security aware. New player that blocks access to adult content.
-* Yandex DNS 77.88.8.7: Old player that blocks malicious domains. Very popular in Russia.
-* Comodo DNS 8.26.56.26: Old player that blocks malicious domains.
 
-
-| Provider          |  -     | DNS Server        |  -     | Description |
+| Provider          |       | DNS Server        |       | Description |
 |-----------------	|---	|-----------------	|---	|----------------------------------------------------------------------------------------	|
-|  Google        	| -  	| 8.8.8.8         	|   -	| Private and unfiltered. Most popular option.                                           	|
-|  CloudFlare    	|  - 	| 1.1.1.1         	|   -	| Private and unfiltered. New player.                                                    	|
-|  Quad9         	|  - 	| 9.9.9.9         	|   -	| Private and security aware. New player that blocks access to malicious domains.        	|
-|  OpenDNS       	|   -	| 208.67.222.222  	|   -	| Old player that blocks malicious domains and offers the option to block adult content. 	|
-|  Norton DNS    	|   -	| 199.85.126.20   	|   -	| Old player that blocks malicious domains and is integrated with their Antivirus.       	|
-|  CleanBrowsing 	|   -	| 185.228.168.168 	|   -	| Private and security aware. New player that blocks access to adult content.            	|
-|  Yandex DNS    	|   -	| 77.88.8.7       	|   -	| Old player that blocks malicious domains. Very popular in Russia.                      	|
-|  Comodo DNS    	|   -	| 8.26.56.26      	|   -	| Old player that blocks malicious domains.                                              	|
+|  Google        	|    	| 8.8.8.8         	|   	| Private and unfiltered. Most popular option.                                           	|
+|  CloudFlare    	|    	| 1.1.1.1         	|   	| Private and unfiltered. New player.                                                    	|
+|  Quad9         	|    	| 9.9.9.9         	|   	| Private and security aware. New player that blocks access to malicious domains.        	|
+|  OpenDNS       	|    	| 208.67.222.222  	|   	| Old player that blocks malicious domains and offers the option to block adult content. 	|
+|  Norton DNS    	|   	| 199.85.126.20   	|   	| Old player that blocks malicious domains and is integrated with their Antivirus.       	|
+|  CleanBrowsing 	|   	| 185.228.168.168 	|   	| Private and security aware. New player that blocks access to adult content.            	|
+|  Yandex DNS    	|   	| 77.88.8.7       	|   	| Old player that blocks malicious domains. Very popular in Russia.                      	|
+|  Comodo DNS    	|   	| 8.26.56.26      	|   	| Old player that blocks malicious domains.                                              	|
