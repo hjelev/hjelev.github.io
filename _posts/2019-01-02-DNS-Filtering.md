@@ -59,7 +59,6 @@ They have 3 free content filters available via IPv4 and IPv6. Choose the one tha
 All their IP addresses accept DNS request to the standard port 53 and 5353. DNS over TLS is available over port 853 and DNScrypt over port 8443.
 
 | Security Filter 	| 185.228.168.9   	| Malicious domains blocked (phishing/ malware).                          	|
-|-----------------	|-----------------	|-------------------------------------------------------------------------	|
 | Adult Filter    	| 185.228.168.10  	| Adult domains blocked. Search Engines set to safe mode +Security Filter 	|
 | Family Filter   	| 185.228.168.168 	| Proxies VPNs & Mixed Adult Content blocked. Youtube to safe mode +Adult 	|
 
