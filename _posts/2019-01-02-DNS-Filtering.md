@@ -46,6 +46,7 @@ Block over 114k advertisement and malware-serving domains
 They have 3 free content filters available via IPv4 and IPv6. Choose the one that fits your needs the most. 
 
 All their IP addresses accept DNS request to the standard port 53 and 5353. DNS over TLS is available over port 853 and DNScrypt over port 8443.
+
 | Type | Server | Description |
 |--|--|--|
 | Security Filter 	| **185.228.168.9**   	| Malicious domains blocked (phishing/ malware).                          	|
