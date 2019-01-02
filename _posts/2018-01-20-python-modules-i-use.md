@@ -3,6 +3,7 @@ layout: post
 title: Python Modules I Use
 date:   2018-01-20
 categories: python
+permalink: /python-modules
 ---
 
 - [Markdown](https://pypi.python.org/pypi/Markdown) - Python implementation of Markdown.
