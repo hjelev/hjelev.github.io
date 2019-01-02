@@ -35,7 +35,7 @@ Ad Free Web browsing
 
 198.101.242.72
 
-## PrivateDNS - EPSILON EIGHT
+## PrivateDNS - EPSILON EIGHT 
 
 Block over 114k advertisement and malware-serving domains
 
