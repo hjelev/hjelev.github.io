@@ -34,6 +34,10 @@ ads blocking, malware protection and "Family protection" servers.
 {:.center}
 ![adguard dns](https://adguard.com/img/products/dns.png)
 
+.center {
+  text-align: center;
+}
+
 ## PrivateDNS - EPSILON EIGHT 
 
 Block over 114k advertisement and malware-serving domains
