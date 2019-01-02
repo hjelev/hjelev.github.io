@@ -85,7 +85,7 @@ Optional: You can add 2620:fe::9 as the alternative in the list.
 This is a self hosted option. You can host pi-hole on a raspberry pi, docker container or VM and maintain your own block lists.
 You can also use this with one of the DNS providers mentioned above.
 
-<https://firebog.net/> {:target="_blank"} - block lists to use with pi-hole
+<https://firebog.net/>{:target="_blank"} - block lists to use with pi-hole
 
 
 ## Other DNS providers
