@@ -25,6 +25,16 @@ Adguard.com offers ads filtering plus malware protaction.
 
 176.103.130.134
 
+## Alternate DNS
+
+Ad Free Web browsing
+
+<https://alternate-dns.com/>{:target="_blank"}
+
+23.253.163.53
+
+198.101.242.72
+
 ## CleanBrowsing DNS
 
 <https://cleanbrowsing.org/filters>{:target="_blank"}
