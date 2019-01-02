@@ -79,6 +79,14 @@ If you are using IPv6 enter 2620:fe::fe into the Preferred DNS server box.
 
 Optional: You can add 2620:fe::9 as the alternative in the list.
 
+## Pi-hole®: A black hole for Internet advertisements
+
+This is a self hosted option. You can host pi-hole on a raspberry pi, docker container or VM and maintain your own block lists.
+You can also use this with one of the DNS providers mentioned above.
+
+
+https://pi-hole.net/
+
 ## Other DNS providers
 * Google 8.8.8.8: Private and unfiltered. Most popular option.
 * CloudFlare 1.1.1.1: Private and unfiltered. New player.
