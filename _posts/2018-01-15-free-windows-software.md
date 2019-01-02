@@ -2,6 +2,7 @@
 layout: post
 title:  "Collection of free software for Windows"
 categories: windows 
+permalink: /free-software-for-windows
 ---
 
 - [Yawcam](http://www.yawcam.com/){:target="_blank"} - is a webcam software for Windows written in Java.
