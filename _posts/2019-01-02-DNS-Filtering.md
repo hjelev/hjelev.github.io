@@ -118,4 +118,4 @@ You can also use this with one of the DNS providers mentioned above.
 |  Norton DNS    	|   	| 199.85.126.20   	|   	| Old player that blocks malicious domains and is integrated with their Antivirus.       	|
 |  CleanBrowsing 	|   	| 185.228.168.168 	|   	| Private and security aware. New player that blocks access to adult content.            	|
 |  Yandex DNS    	|   	| 77.88.8.7       	|   	| Old player that blocks malicious domains. Very popular in Russia.                      	|
-|* Comodo DNS    	|   	| 8.26.56.26      	|   	| Old player that blocks malicious domains.                                              	|
+|  Comodo DNS    	|   	| 8.26.56.26      	|   	| Old player that blocks malicious domains.                                              	|
