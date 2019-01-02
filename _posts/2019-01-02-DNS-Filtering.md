@@ -43,7 +43,7 @@ Ad Free Web browsing
 
 Block over 114k advertisement and malware-serving domains
 
-https://www.epsiloneight.com/private-dns
+<https://www.epsiloneight.com/private-dns>{:target="_blank"}
 
 * Preferred DNS server 138.68.250.168 
 
