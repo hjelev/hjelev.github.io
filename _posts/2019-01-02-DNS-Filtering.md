@@ -6,6 +6,15 @@ categories: windows
 ---
 # Block ads and protect your network from malware by changing your DNS provider.
 
+It is very easy to block more than 90% of the ads you see when you browse the web or use applications on your phone. All you have to do is use filtered dns service.
+There are coule of them lately and they all offer slightly different services. Some of them block advertisement and malware-serving domains other also offer "Family protection". 
+
+If you create an account at opendns.com you'll be able to choose from more than 50 customizable filtering categories and control what websites your children visit at home.
+
+The easiest way to change the DNS provider for your home network is to change your router network settings by pointing it to some of the DNS providers listed below.
+
+If you have a phone running Android 9 you can set a custom DNS server that will be used no mather what network you are connected to so you can block ads even when you are outside of your home network. 
+
 ## Ad Guard
 
 Adguard.com offers ads filtering plus malware protection.
