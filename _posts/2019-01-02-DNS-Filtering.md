@@ -8,7 +8,7 @@ categories: windows
 
 ## Ad Guard
 
-Adguard.com offers ads filtering plus malware protaction.
+Adguard.com offers ads filtering plus malware protection.
 
 <http://dns.adguard.com>{:target="_blank"}
 
@@ -35,6 +35,15 @@ Ad Free Web browsing
 
 198.101.242.72
 
+## PrivateDNS - EPSILON EIGHT
+
+Block over 114k advertisement and malware-serving domains
+
+https://www.epsiloneight.com/private-dns
+
+138.68.250.168
+
+
 ## CleanBrowsing DNS
 
 <https://cleanbrowsing.org/filters>{:target="_blank"}
@@ -54,7 +63,7 @@ All their IP addresses accept DNS request to the standard port 53 and 5353. DNS 
 
 OpenDNS Family Shield
 
-Preconfigured to block adult content — set it & forget it
+Pre-configured to block adult content — set it & forget it
 
 208.67.222.123
 208.67.220.123
