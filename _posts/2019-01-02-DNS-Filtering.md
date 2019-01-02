@@ -4,6 +4,9 @@ title: DNS Filtering
 date:   2019-01-02
 categories: windows
 ---
+# Block ads and protect your network from malware by changing your DNS provider.
+
+
 
 <https://cleanbrowsing.org/filters>
 
