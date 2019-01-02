@@ -41,7 +41,7 @@ Block over 114k advertisement and malware-serving domains
 
 https://www.epsiloneight.com/private-dns
 
-138.68.250.168
+138.68.250.168 
 
 ## CleanBrowsing DNS
 
