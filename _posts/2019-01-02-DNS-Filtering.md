@@ -13,19 +13,20 @@ Adguard.com offers ads filtering plus malware protaction.
 <http://dns.adguard.com>{:target="_blank"}
 
 
-for "Default" servers:
+* use these DNS servers if you want ads blocking and malware protection:
 
 176.103.130.130
 
 176.103.130.131
 
-for "Family protection" servers.
+* ads blocking, malware protection and "Family protection" servers.
 
 176.103.130.132
 
 176.103.130.134
 
-##CleanBrowsing DNS
+## CleanBrowsing DNS
+
 <https://cleanbrowsing.org/filters>{:target="_blank"}
 
 
@@ -41,12 +42,18 @@ All their IP addresses accept DNS request to the standard port 53 and 5353. DNS 
 ## Open DNS
 <https://www.opendns.com/setupguide/#familyshield>{:target="_blank"}
 
+OpenDNS Family Shield
+
+Preconfigured to block adult content — set it & forget it
+
 208.67.222.123
 208.67.220.123
 
 
 ## Quad 9
 <https://www.quad9.net>{:target="_blank"}
+
+Quad 9 provides malware and malicious domains protection - there is no ads blocking.
 
 Select “Use the following DNS server addresses” and enter 9.9.9.9 into the Preferred DNS server box. For the Alternative DNS server enter 149.112.112.112
 
