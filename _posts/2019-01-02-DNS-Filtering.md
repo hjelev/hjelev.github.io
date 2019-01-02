@@ -21,10 +21,14 @@ We have 3 free content filters available via IPv4 and IPv6. Choose the one that 
 
 <http://dns.adguard.com>
 
-for "Default" servers;
+for "Default" servers:
+
 176.103.130.130
+
 176.103.130.131
 
 for "Family protection" servers.
+
 176.103.130.132
+
 176.103.130.134
