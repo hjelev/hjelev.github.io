@@ -98,6 +98,7 @@ You can also use this with one of the DNS providers mentioned above.
 
 
 ## Other DNS providers
+
 * Google 8.8.8.8: Private and unfiltered. Most popular option.
 * CloudFlare 1.1.1.1: Private and unfiltered. New player.
 * Quad9 9.9.9.9: Private and security aware. New player that blocks access to malicious domains.
@@ -106,3 +107,10 @@ You can also use this with one of the DNS providers mentioned above.
 * CleanBrowsing 185.228.168.168: Private and security aware. New player that blocks access to adult content.
 * Yandex DNS 77.88.8.7: Old player that blocks malicious domains. Very popular in Russia.
 * Comodo DNS 8.26.56.26: Old player that blocks malicious domains.
+
+
+| Tables   |      Are      |  Cool |
+|----------|:-------------:|------:|
+| col 1 is |  left-aligned | $1600 |
+| col 2 is |    centered   |   $12 |
+| col 3 is | right-aligned |    $1 |
