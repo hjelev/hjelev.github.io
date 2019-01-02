@@ -16,11 +16,9 @@ The easiest way to change the DNS provider for your home network is to change yo
 If you have a phone running Android 9 you can set a custom DNS server that will be used no mather what network you are connected to so you can block ads even when you are outside of your home network. 
 
 ## Ad Guard
-
-Adguard.com offers ads filtering plus malware protection.
-
 <http://dns.adguard.com>{:target="_blank"}
 
+Adguard.com offers ads filtering plus malware protection.
 
 use these DNS servers if you want ads blocking and malware protection:
 
@@ -34,9 +32,9 @@ ads blocking, malware protection and "Family protection" servers.
 
 ## Alternate DNS
 
-Ad Free Web browsing
-
 <https://alternate-dns.com/>{:target="_blank"}
+
+Ad Free Web browsing
 
 * Preferred DNS server: 23.253.163.53
 * Alternative DNS server: 198.101.242.72
