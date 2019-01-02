@@ -43,7 +43,6 @@ https://www.epsiloneight.com/private-dns
 
 138.68.250.168
 
-
 ## CleanBrowsing DNS
 
 <https://cleanbrowsing.org/filters>{:target="_blank"}
