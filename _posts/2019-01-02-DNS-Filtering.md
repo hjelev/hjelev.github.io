@@ -16,6 +16,9 @@ The easiest way to change the DNS provider for your home network is to change yo
 
 If you have a phone running Android 9 you can set a custom DNS server that will be used no mather what network you are connected to so you can block ads even when you are outside of your home network. 
 
+{:.center}
+![adguard dns](https://adguard.com/img/products/dns.png)
+
 ## Ad Guard
 <http://dns.adguard.com>{:target="_blank"}
 
@@ -30,9 +33,6 @@ ads blocking, malware protection and "Family protection" servers.
 
 * Preferred DNS server: **176.103.130.132**
 * Alternative DNS server: **176.103.130.134**
-
-{:.center}
-![adguard dns](https://adguard.com/img/products/dns.png)
 
 ## PrivateDNS - EPSILON EIGHT 
 
