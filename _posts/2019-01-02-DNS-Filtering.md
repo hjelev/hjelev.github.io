@@ -32,3 +32,11 @@ for "Family protection" servers.
 176.103.130.132
 
 176.103.130.134
+
+<https://www.quad9.net>
+
+Select “Use the following DNS server addresses” and enter 9.9.9.9 into the Preferred DNS server box. For the Alternative DNS server enter 149.112.112.112
+
+If you are using IPv6 enter 2620:fe::fe into the Preferred DNS server box.
+
+Optional: You can add 2620:fe::9 as the alternative in the list.
