@@ -18,7 +18,7 @@ If you have a phone running Android 9 you can set a custom DNS server that will 
 ## Ad Guard
 <http://dns.adguard.com>{:target="_blank"}
 
-Adguard.com offers ads filtering plus malware protection.
+Adguard.com offers advertisement blocking plus malware protection.
 
 use these DNS servers if you want ads blocking and malware protection:
 
@@ -27,8 +27,8 @@ use these DNS servers if you want ads blocking and malware protection:
 
 ads blocking, malware protection and "Family protection" servers.
 
-* Preferred DNS server: 176.103.130.132
-* Alternative DNS server: 176.103.130.134
+* Preferred DNS server: **176.103.130.132**
+* Alternative DNS server: **176.103.130.134**
 
 ## PrivateDNS - EPSILON EIGHT 
 
@@ -36,7 +36,7 @@ Block over 114k advertisement and malware-serving domains
 
 <https://www.epsiloneight.com/private-dns>{:target="_blank"}
 
-* Preferred DNS server: 138.68.250.168 
+* Preferred DNS server: **138.68.250.168** 
 
 ## CleanBrowsing DNS
 
@@ -47,9 +47,9 @@ They have 3 free content filters available via IPv4 and IPv6. Choose the one tha
 
 All their IP addresses accept DNS request to the standard port 53 and 5353. DNS over TLS is available over port 853 and DNScrypt over port 8443.
 
-| Security Filter 	| 185.228.168.9   	| Malicious domains blocked (phishing/ malware).                          	|
-| Adult Filter    	| 185.228.168.10  	| Adult domains blocked. Search Engines set to safe mode +Security Filter 	|
-| Family Filter   	| 185.228.168.168 	| Proxies VPNs & Mixed Adult Content blocked. Youtube to safe mode +Adult 	|
+| Security Filter 	| **185.228.168.9**   	| Malicious domains blocked (phishing/ malware).                          	|
+| Adult Filter    	| **185.228.168.10**  	| Adult domains blocked. Search Engines set to safe mode +Security Filter 	|
+| Family Filter   	| **185.228.168.168** 	| Proxies VPNs & Mixed Adult Content blocked. Youtube to safe mode +Adult 	|
 
 
 ## Open DNS
@@ -59,8 +59,8 @@ OpenDNS Family Shield
 
 Pre-configured to block adult content — set it & forget it
 
-* Preferred DNS server: 208.67.222.123
-* Alternative DNS server: 208.67.220.123
+* Preferred DNS server: **208.67.222.123**
+* Alternative DNS server: **208.67.220.123**
 
 
 ## Quad 9
@@ -68,8 +68,8 @@ Pre-configured to block adult content — set it & forget it
 
 Quad 9 provides malware and malicious domains protection - there is no ads blocking.
 
-* Preferred DNS server: 9.9.9.9
-* Alternative DNS server: 149.112.112.112
+* Preferred DNS server: **9.9.9.9**
+* Alternative DNS server: **149.112.112.112**
 
 ## Pi-hole®: A black hole for Internet advertisements
 <https://pi-hole.net/>{:target="_blank"}
@@ -87,8 +87,5 @@ You can also use this with one of the DNS providers mentioned above.
 |-----------------	|---	|-----------------	|---	|----------------------------------------------------------------------------------------	|
 |  Google        	|    	| 8.8.8.8         	|   	| Private and unfiltered. Most popular option.                                           	|
 |  CloudFlare    	|    	| 1.1.1.1         	|   	| Private and unfiltered. New player.                                                    	|
-|  Quad9         	|    	| 9.9.9.9         	|   	| Private and security aware. New player that blocks access to malicious domains.        	|
-|  OpenDNS       	|    	| 208.67.222.222  	|   	| Old player that blocks malicious domains and offers the option to block adult content. 	|
-|  CleanBrowsing 	|   	| 185.228.168.168 	|   	| Private and security aware. New player that blocks access to adult content.            	|
 |  Yandex DNS    	|   	| 77.88.8.7       	|   	| Old player that blocks malicious domains. Very popular in Russia.                      	|
 |  Comodo DNS    	|   	| 8.26.56.26      	|   	| Old player that blocks malicious domains.                                              	|
