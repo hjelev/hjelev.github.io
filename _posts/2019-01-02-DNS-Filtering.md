@@ -40,3 +40,13 @@ Select “Use the following DNS server addresses” and enter 9.9.9.9 into the P
 If you are using IPv6 enter 2620:fe::fe into the Preferred DNS server box.
 
 Optional: You can add 2620:fe::9 as the alternative in the list.
+
+
+* Google 8.8.8.8: Private and unfiltered. Most popular option.
+* CloudFlare 1.1.1.1: Private and unfiltered. New player.
+* Quad9 9.9.9.9: Private and security aware. New player that blocks access to malicious domains.
+* OpenDNS 208.67.222.222: Old player that blocks malicious domains and offers the option to block adult content.
+* Norton DNS 199.85.126.20: Old player that blocks malicious domains and is integrated with their Antivirus.
+* CleanBrowsing 185.228.168.168: Private and security aware. New player that blocks access to adult content.
+* Yandex DNS 77.88.8.7: Old player that blocks malicious domains. Very popular in Russia.
+* Comodo DNS 8.26.56.26: Old player that blocks malicious domains.
