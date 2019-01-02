@@ -1,11 +1,11 @@
 ---
 layout: post
-title: How to Make Windows 10 auto login
+title: Windows 10 Auto Login
 date:   2018-12-31
 categories: windows
 permalink: /windows-10-auto-login
 ---
-How to Make Windows 10 Automatically login without password.
+#How to Make Windows 10 Automatically login without password.
 
 If you are like me and don't like to enter passwords each time you use your home computer, you'll like this.
 
