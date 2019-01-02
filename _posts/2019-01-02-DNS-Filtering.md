@@ -3,6 +3,7 @@ layout: post
 title: DNS Filtering
 date:   2019-01-02
 categories: windows
+permalink: /DNS-Filtering
 ---
 # Block ads and protect your network from malware by changing your DNS provider.
 
