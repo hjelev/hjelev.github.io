@@ -36,9 +36,9 @@ ads blocking, malware protection and "Family protection" servers.
 
 ## PrivateDNS - EPSILON EIGHT 
 
-Block over 114k advertisement and malware-serving domains
-
 <https://www.epsiloneight.com/private-dns>{:target="_blank"}
+
+Block over 114k advertisement and malware-serving domains
 
 * Preferred DNS server: **138.68.250.168** 
 
