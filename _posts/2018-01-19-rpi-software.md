@@ -3,7 +3,6 @@ layout: post
 title: Software for Raspberry Pi
 date: 2018-01-19
 categories: raspberry-pi
-permalink: /software-for-raspberry-pi
 ---
 
 Collection of software for raspberry pi
