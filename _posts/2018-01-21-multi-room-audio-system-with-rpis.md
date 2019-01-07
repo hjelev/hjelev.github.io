@@ -3,7 +3,6 @@ layout: post
 title: Build a Cheap Multi-Room Audio System
 date: 2018-01-21
 categories: raspberry-pi
-permalink: /multi-room-audio-system
 ---
 
 How to build cheap Multi-Room Audio System with raspberry pis for network players and logitec media server.

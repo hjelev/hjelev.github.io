@@ -3,7 +3,6 @@ layout: post
 title: Basic IPTables Tutorial
 date: 2018-01-20
 categories: linux
-permalink: /basic-iptables-tutorial
 ---
 
 This is the iptables configuration I have used to secure my pihole instance before exposing it publicly.  

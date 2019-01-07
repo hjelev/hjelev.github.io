@@ -3,7 +3,6 @@ layout: post
 title: Windows 10 Auto Login
 date:   2018-12-31
 categories: windows
-permalink: /windows-10-auto-login
 ---
 # How to Make Windows 10 Automatically login without password.
 
