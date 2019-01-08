@@ -43,11 +43,11 @@ I'll show you how to prepare the SD card with a windows computer. This is the SD
 4. If you plan to connect this player/rpi via wifi, now is the time to configure the wi-fi network credentials (if you don't do so now you'll have to attach monitor and a keyboard to your rpi later)
 Create a file `wpa_supplicant.conf` and place it in the `boot` partition.
 wpa_supplicant.conf
-   <pre>
-   ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-   update_config=1
-   network={
-   ssid="YourNetworkSSID-1"
+    <pre>
+    ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+    update_config=1
+    network={
+    ssid="YourNetworkSSID-1"
             psk="passwordOne"
             }</pre>
 5. To enable ssh create an empty file named `ssh` and place it in the boot partition.  
@@ -59,7 +59,7 @@ wpa_supplicant.conf
     <pre>$ passwd</pre> 
 9. Update your system packages by running
     <pre>$ sudo apt-get -y update && sudo apt-get -y dist-upgrade</pre>
-   This will take some time.
+ This will take some time.
 10. Install some libraries that are needed by squeezelite
     <pre>$ sudo apt-get install -y libflac-dev libfaad2 libmad0</pre>
 11. Create a folder for squeezelite and download it:
@@ -70,44 +70,44 @@ $ tar -xvzf squeezelite-armv6hf.tar.gz</pre>
 [Here](https://sourceforge.net/projects/lmsclients/files/squeezelite/linux/){:target="_blank"} you can find Squeezelite and other LMS Clients for different OS.
 
 12. Now set the sound level:
-   <pre>$ sudo alsamixer</pre>
+    <pre>$ sudo alsamixer</pre>
 Use the `F6` key to select the right sound card (I am using an USB sound card), and then set the volume using the arrow keys. Set the volume just before the red zone also set the microphone volume to zero, to make sure it will not cause any noise.
 then type:
-   <pre>$sudo alsactl store</pre>
+    <pre>$sudo alsactl store</pre>
 to save the soundcard output levels so they don't revert after restarting the system.
 
 13. Before we can run squeezelite we need to find the name of our usb sound card.
-   <pre>$ ./squeezelite -l</pre>
-   You'll get an output like the one below:
-   <pre>
-Output devices:
-  null                           - Discard all samples (playback) or generate zero samples (capture)
-  pulse                          - PulseAudio Sound Server
-  default:CARD=ALSA              - bcm2835 ALSA, bcm2835 ALSA - Default Audio Device
-  sysdefault:CARD=ALSA           - bcm2835 ALSA, bcm2835 ALSA - Default Audio Device
-  dmix:CARD=ALSA,DEV=0           - bcm2835 ALSA, bcm2835 ALSA - Direct sample mixing device
-  dmix:CARD=ALSA,DEV=1           - bcm2835 ALSA, bcm2835 IEC958/HDMI - Direct sample mixing device
-  dsnoop:CARD=ALSA,DEV=0         - bcm2835 ALSA, bcm2835 ALSA - Direct sample snooping device
-  dsnoop:CARD=ALSA,DEV=1         - bcm2835 ALSA, bcm2835 IEC958/HDMI - Direct sample snooping device
-  hw:CARD=ALSA,DEV=0             - bcm2835 ALSA, bcm2835 ALSA - Direct hardware device without any conversions
-  hw:CARD=ALSA,DEV=1             - bcm2835 ALSA, bcm2835 IEC958/HDMI - Direct hardware device without any conversions
-  plughw:CARD=ALSA,DEV=0         - bcm2835 ALSA, bcm2835 ALSA - Hardware device with all software conversions
-  plughw:CARD=ALSA,DEV=1         - bcm2835 ALSA, bcm2835 IEC958/HDMI - Hardware device with all software conversions
-  default:CARD=Device            - USB Audio Device, USB Audio - Default Audio Device
-  sysdefault:CARD=Device         - USB Audio Device, USB Audio - Default Audio Device
-  front:CARD=Device,DEV=0        - USB Audio Device, USB Audio - Front speakers
-  surround21:CARD=Device,DEV=0   - USB Audio Device, USB Audio - 2.1 Surround output to Front and Subwoofer speakers
-  surround40:CARD=Device,DEV=0   - USB Audio Device, USB Audio - 4.0 Surround output to Front and Rear speakers
-  surround41:CARD=Device,DEV=0   - USB Audio Device, USB Audio - 4.1 Surround output to Front, Rear and Subwoofer speakers
-  surround50:CARD=Device,DEV=0   - USB Audio Device, USB Audio - 5.0 Surround output to Front, Center and Rear speakers
-  surround51:CARD=Device,DEV=0   - USB Audio Device, USB Audio - 5.1 Surround output to Front, Center, Rear and Subwoofer speakers
-  surround71:CARD=Device,DEV=0   - USB Audio Device, USB Audio - 7.1 Surround output to Front, Center, Side, Rear and Woofer speakers
-  iec958:CARD=Device,DEV=0       - USB Audio Device, USB Audio - IEC958 (S/PDIF) Digital Audio Output
-  dmix:CARD=Device,DEV=0         - USB Audio Device, USB Audio - Direct sample mixing device
-  dsnoop:CARD=Device,DEV=0       - USB Audio Device, USB Audio - Direct sample snooping device
-  hw:CARD=Device,DEV=0           - USB Audio Device, USB Audio - Direct hardware device without any conversions
-  plughw:CARD=Device,DEV=0       - USB Audio Device, USB Audio - Hardware device with all software conversions
- </pre>
+    <pre>$ ./squeezelite -l</pre>
+    You'll get an output like the one below:
+    <pre>
+    Output devices:
+      null                           - Discard all samples (playback) or generate zero samples (capture)
+      pulse                          - PulseAudio Sound Server
+      default:CARD=ALSA              - bcm2835 ALSA, bcm2835 ALSA - Default Audio Device
+      sysdefault:CARD=ALSA           - bcm2835 ALSA, bcm2835 ALSA - Default Audio Device
+      dmix:CARD=ALSA,DEV=0           - bcm2835 ALSA, bcm2835 ALSA - Direct sample mixing device
+      dmix:CARD=ALSA,DEV=1           - bcm2835 ALSA, bcm2835 IEC958/HDMI - Direct sample mixing device
+      dsnoop:CARD=ALSA,DEV=0         - bcm2835 ALSA, bcm2835 ALSA - Direct sample snooping device
+      dsnoop:CARD=ALSA,DEV=1         - bcm2835 ALSA, bcm2835 IEC958/HDMI - Direct sample snooping device
+      hw:CARD=ALSA,DEV=0             - bcm2835 ALSA, bcm2835 ALSA - Direct hardware device without any conversions
+      hw:CARD=ALSA,DEV=1             - bcm2835 ALSA, bcm2835 IEC958/HDMI - Direct hardware device without any conversions
+      plughw:CARD=ALSA,DEV=0         - bcm2835 ALSA, bcm2835 ALSA - Hardware device with all software conversions
+      plughw:CARD=ALSA,DEV=1         - bcm2835 ALSA, bcm2835 IEC958/HDMI - Hardware device with all software conversions
+      default:CARD=Device            - USB Audio Device, USB Audio - Default Audio Device
+      sysdefault:CARD=Device         - USB Audio Device, USB Audio - Default Audio Device
+      front:CARD=Device,DEV=0        - USB Audio Device, USB Audio - Front speakers
+      surround21:CARD=Device,DEV=0   - USB Audio Device, USB Audio - 2.1 Surround output to Front and Subwoofer speakers
+      surround40:CARD=Device,DEV=0   - USB Audio Device, USB Audio - 4.0 Surround output to Front and Rear speakers
+      surround41:CARD=Device,DEV=0   - USB Audio Device, USB Audio - 4.1 Surround output to Front, Rear and Subwoofer speakers
+      surround50:CARD=Device,DEV=0   - USB Audio Device, USB Audio - 5.0 Surround output to Front, Center and Rear speakers
+      surround51:CARD=Device,DEV=0   - USB Audio Device, USB Audio - 5.1 Surround output to Front, Center, Rear and Subwoofer speakers
+      surround71:CARD=Device,DEV=0   - USB Audio Device, USB Audio - 7.1 Surround output to Front, Center, Side, Rear and Woofer speakers
+      iec958:CARD=Device,DEV=0       - USB Audio Device, USB Audio - IEC958 (S/PDIF) Digital Audio Output
+      dmix:CARD=Device,DEV=0         - USB Audio Device, USB Audio - Direct sample mixing device
+      dsnoop:CARD=Device,DEV=0       - USB Audio Device, USB Audio - Direct sample snooping device
+      hw:CARD=Device,DEV=0           - USB Audio Device, USB Audio - Direct hardware device without any conversions
+      plughw:CARD=Device,DEV=0       - USB Audio Device, USB Audio - Hardware device with all software conversions
+    </pre>
 Since we are using a USB Audio Device we need to pick one of the listed USB devices. I am using `front:CARD=Device,DEV=0` as it works best for me. 
 You can test the other USB devices and decide for yourself.
    <pre>$ ./squeezelite -n Player-location -m 15:c4:20:16:b7:4f -o front:CARD=Device,DEV=0</pre>
