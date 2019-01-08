@@ -43,11 +43,11 @@ I'll show you how to prepare the SD card with a windows computer. This is the SD
 4. If you plan to connect this player/rpi via wifi, now is the time to configure the wi-fi network credentials (if you don't do so now you'll have to attach monitor and a keyboard to your rpi later)
 Create a file `wpa_supplicant.conf` and place it in the `boot` partition.
 wpa_supplicant.conf
-<pre>
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-network={ssid="YourNetworkSSID-1"
-         psk="passwordOne"}</pre>
+   <pre>
+   ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+   update_config=1
+   network={ssid="YourNetworkSSID-1"
+            psk="passwordOne"}</pre>
 5. To enable ssh create an empty file named `ssh` and place it in the boot partition.  
 6. Insert the SD card in the raspberry pi, connect the USB sound card using the cable adapter, connect the 5v power supply, after less than 1 minute it should boot and connect to the network.  
 7. Now you need to find the ip address of the raspberry pi, you can do that by checking the DHCP clients in you router control panel or use your phone and an application like [Fing](https://play.google.com/store/apps/details?id=com.overlook.android.fing){:target="_blank"} (there is also an iphone version of Fing)  
