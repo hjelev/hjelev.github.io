@@ -110,7 +110,7 @@ to save the soundcard output levels so they don't revert after restarting the sy
     </pre>
 Since we are using a USB Audio Device we need to pick one of the listed USB devices. I am using `front:CARD=Device,DEV=0` as it works best for me. 
 You can test the other USB devices and decide for yourself.
-   <pre>$ ./squeezelite -n Player-location -m 15:c4:20:16:b7:4f -o front:CARD=Device,DEV=0</pre>
+    <pre>$ ./squeezelite -n Player-location -m 15:c4:20:16:b7:4f -o front:CARD=Device,DEV=0</pre>
 `-n` sets the name of the player - the name that you'll see when you control it.  
 `-m` is the mac address of the network player - pick a random mac address - it should be unique for each player in your network.  
 `-o` is the output device used for the playback (your USB sound card)  
@@ -119,9 +119,9 @@ You can test the player to make sure its working properly.
 When done testing you can close the server with `Ctrl+C`
 14. Starting Squeezelite on Startup.  
 There are many ways you can use to start the player on start up. The easiest one I have found is using `crontab`.
-   <pre>$ crontab -e</pre>
+    <pre>$ crontab -e</pre>
 and add this line some where in the file 
-   <pre>@reboot sudo -u pi /home/pi/squeezelite/squeezelite -n Player_Name -m 15:c4:20:16:b7:4f -o front:CARD=Device,DEV=0 & </pre>
+    <pre>@reboot sudo -u pi /home/pi/squeezelite/squeezelite -n Player_Name -m 15:c4:20:16:b7:4f -o front:CARD=Device,DEV=0 & </pre>
 15. Reboot your raspberry pi to make sure the player is loaded on startup.
 This is all you need to do to create a new network music player for your multi-room audio system. 
 For the other players you need to repeat all the steps described above and pick a different mac (-m) address and name (-n) in the player configuration step.
