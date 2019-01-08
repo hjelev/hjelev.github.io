@@ -46,38 +46,40 @@ wpa_supplicant.conf
    <pre>
    ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
    update_config=1
-   network={ssid="YourNetworkSSID-1"
-            psk="passwordOne"}</pre>
+   network={
+   ssid="YourNetworkSSID-1"
+            psk="passwordOne"
+            }</pre>
 5. To enable ssh create an empty file named `ssh` and place it in the boot partition.  
 6. Insert the SD card in the raspberry pi, connect the USB sound card using the cable adapter, connect the 5v power supply, after less than 1 minute it should boot and connect to the network.  
 7. Now you need to find the ip address of the raspberry pi, you can do that by checking the DHCP clients in you router control panel or use your phone and an application like [Fing](https://play.google.com/store/apps/details?id=com.overlook.android.fing){:target="_blank"} (there is also an iphone version of Fing)  
 8. Once you find the ip address ssh to it using [Putty](https://www.putty.org/){:target="_blank"} or your favorite ssh client.  
  When connecting use user `pi` and password `raspberry`  
  After you login for a first time change the default password with  
- <pre>$ passwd</pre> 
+   <pre>$ passwd</pre> 
 9. Update your system packages by running
- <pre>$ sudo apt-get -y update && sudo apt-get -y dist-upgrade</pre>
+   <pre>$ sudo apt-get -y update && sudo apt-get -y dist-upgrade</pre>
  This will take some time.  
 10. Install some libraries that are needed by squeezelite	
- <pre>$ sudo apt-get install -y libflac-dev libfaad2 libmad0</pre> 	
+   <pre>$ sudo apt-get install -y libflac-dev libfaad2 libmad0</pre> 	
 11. Create a folder for squeezelite and download it:
- <pre>$ mkdir squeezelite
+   <pre>$ mkdir squeezelite
 $ cd squeezelite
 $ wget -O squeezelite-armv6hf.tar.gz http://www.gerrelt.nl/RaspberryPi/squeezelite_ralph/squeezelite-armv6hf.tar.gz
 $ tar -xvzf squeezelite-armv6hf.tar.gz</pre>
 [Here](https://sourceforge.net/projects/lmsclients/files/squeezelite/linux/){:target="_blank"} you can find Squeezelite and other LMS Clients for different OS.
 
 12. Now set the sound level:
-<pre>$ sudo alsamixer</pre>
+   <pre>$ sudo alsamixer</pre>
 Use the `F6` key to select the right sound card (I am using an USB sound card), and then set the volume using the arrow keys. Set the volume just before the red zone also set the microphone volume to zero, to make sure it will not cause any noise.
 then type:
-<pre>$sudo alsactl store</pre>
+   <pre>$sudo alsactl store</pre>
 to save the soundcard output levels so they don't revert after restarting the system.
 
 13. Before we can run squeezelite we need to find the name of our usb sound card.
-<pre>$ ./squeezelite -l</pre>
-You'll get an output like the one below:
- <pre>
+   <pre>$ ./squeezelite -l</pre>
+   You'll get an output like the one below:
+   <pre>
 Output devices:
   null                           - Discard all samples (playback) or generate zero samples (capture)
   pulse                          - PulseAudio Sound Server
@@ -108,7 +110,7 @@ Output devices:
  </pre>
 Since we are using a USB Audio Device we need to pick one of the listed USB devices. I am using `front:CARD=Device,DEV=0` as it works best for me. 
 You can test the other USB devices and decide for yourself.
-<pre>$ ./squeezelite -n Player-location -m 15:c4:20:16:b7:4f -o front:CARD=Device,DEV=0</pre>
+   <pre>$ ./squeezelite -n Player-location -m 15:c4:20:16:b7:4f -o front:CARD=Device,DEV=0</pre>
 `-n` sets the name of the player - the name that you'll see when you control it.  
 `-m` is the mac address of the network player - pick a random mac address - it should be unique for each player in your network.  
 `-o` is the output device used for the playback (your USB sound card)  
@@ -117,9 +119,9 @@ You can test the player to make sure its working properly.
 When done testing you can close the server with `Ctrl+C`
 14. Starting Squeezelite on Startup.  
 There are many ways you can use to start the player on start up. The easiest one I have found is using `crontab`.
-<pre>$ crontab -e</pre>
+   <pre>$ crontab -e</pre>
 and add this line some where in the file 
-<pre>@reboot sudo -u pi /home/pi/squeezelite/squeezelite -n Player_Name -m 15:c4:20:16:b7:4f -o front:CARD=Device,DEV=0 & </pre>
+   <pre>@reboot sudo -u pi /home/pi/squeezelite/squeezelite -n Player_Name -m 15:c4:20:16:b7:4f -o front:CARD=Device,DEV=0 & </pre>
 15. Reboot your raspberry pi to make sure the player is loaded on startup.
 This is all you need to do to create a new network music player for your multi-room audio system. 
 For the other players you need to repeat all the steps described above and pick a different mac (-m) address and name (-n) in the player configuration step.
