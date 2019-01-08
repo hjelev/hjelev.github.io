@@ -56,14 +56,14 @@ wpa_supplicant.conf
 8. Once you find the ip address ssh to it using [Putty](https://www.putty.org/){:target="_blank"} or your favorite ssh client.  
  When connecting use user `pi` and password `raspberry`  
  After you login for a first time change the default password with  
-   <pre>$ passwd</pre> 
+    <pre>$ passwd</pre> 
 9. Update your system packages by running
-   <pre>$ sudo apt-get -y update && sudo apt-get -y dist-upgrade</pre>
-   This will take some time.  
-10. Install some libraries that are needed by squeezelite	
-   <pre>$ sudo apt-get install -y libflac-dev libfaad2 libmad0</pre> 	
+    <pre>$ sudo apt-get -y update && sudo apt-get -y dist-upgrade</pre>
+   This will take some time.
+10. Install some libraries that are needed by squeezelite
+    <pre>$ sudo apt-get install -y libflac-dev libfaad2 libmad0</pre>
 11. Create a folder for squeezelite and download it:
-   <pre>$ mkdir squeezelite
+    <pre>$ mkdir squeezelite
 $ cd squeezelite
 $ wget -O squeezelite-armv6hf.tar.gz http://www.gerrelt.nl/RaspberryPi/squeezelite_ralph/squeezelite-armv6hf.tar.gz
 $ tar -xvzf squeezelite-armv6hf.tar.gz</pre>
