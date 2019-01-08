@@ -72,10 +72,15 @@ $ tar -xvzf squeezelite-armv6hf.tar.gz</pre>
 12. Now set the sound level:
 <pre>$ sudo alsamixer</pre>
 
-<pre>$sudo alsactl store</pre>
-to save the soundcard output levels so they don't revert after restarting the system.
+
 
 Use the `F6` key to select the right sound card (I am using an USB sound card), and then set the volume using the arrow keys. Set the volume just before the red zone also set the microphone volume to zero, to make sure it will not cause any noise.
+then type:
+
+<pre>$sudo alsactl store</pre>
+
+to save the soundcard output levels so they don't revert after restarting the system.
+
 13. Before we can run squeezelite we need to find the name of our usb sound card.
 <pre>$ ./squeezelite -l</pre>
 You'll get an output like the one below:
