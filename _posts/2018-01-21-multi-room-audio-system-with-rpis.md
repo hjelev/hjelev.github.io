@@ -40,9 +40,9 @@ I'll show you how to prepare the SD card with a windows computer. This is the SD
 1. Download and install [Win32 Disk Imager](https://sourceforge.net/projects/win32diskimager/){:target="_blank"} on your PC.
 2. Download [Raspbian Stretch Lite](https://www.raspberrypi.org/downloads/raspbian/){:target="_blank"} image from raspberrypi.org site. (you can also use the full version but there is no need to do so and its bigger)
 3. Use Win32 disk imager to write the rasbian image you have just downloaded to the SD card.
-4. If you plan to connect this player/rpi via wifi, now is the time to configure the wi-fi network credentials (if you don't do so now you'll have to attach monitor and a keyboard to your rpi later)  
-Create a file `wpa_supplicant.conf` and place it in the `boot` partition.  
-wpa_supplicant.conf  
+4. If you plan to connect this player/rpi via wifi, now is the time to configure the wi-fi network credentials (if you don't do so now you'll have to attach monitor and a keyboard to your rpi later)
+Create a file `wpa_supplicant.conf` and place it in the `boot` partition.
+wpa_supplicant.conf
 <pre>
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
