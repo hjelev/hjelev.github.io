@@ -59,7 +59,7 @@ wpa_supplicant.conf
    <pre>$ passwd</pre> 
 9. Update your system packages by running
    <pre>$ sudo apt-get -y update && sudo apt-get -y dist-upgrade</pre>
- This will take some time.  
+   This will take some time.  
 10. Install some libraries that are needed by squeezelite	
    <pre>$ sudo apt-get install -y libflac-dev libfaad2 libmad0</pre> 	
 11. Create a folder for squeezelite and download it:
