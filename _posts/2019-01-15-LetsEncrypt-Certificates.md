@@ -19,10 +19,10 @@ categories: linux
     The certificate files will be located at: `/etc/letsencrypt/live/example.com`
 
 3. Once the certificate is generated we need to modify the nginx configuration file for that domain.
-The configuration file that we need to modify is located in `/etc/nginx/sites-available` .
+    The configuration file that we need to modify is located in `/etc/nginx/sites-available` .
 
-nginx config file:
-(this is the nginx configuration I have used to enable SSL for my Home-assistant setup.)
+    nginx config file:
+    (this is the nginx configuration I have used to enable SSL for my Home-assistant setup.)
 
     <pre>
     map $http_upgrade $connection_upgrade {
@@ -50,14 +50,11 @@ nginx config file:
     </pre>
 
 4. Check if the changes you have made to nginx configuration files are valid:
-  <pre>$nginx -t</pre>
+    <pre>$nginx -t</pre>
 
 5. Reload Nginx Configuration:
-
-  <pre>$sudo /etc/init.d/nginx reload</pre>
+    <pre>$sudo /etc/init.d/nginx reload</pre>
 
 6. Renew your certificates:
-
 Let's Encrypt certificates are valid for 90 days. To renew your expiring certificate(s) use the command below:
-
-   <pre>$sudo certbot renew</pre>
+    <pre>$sudo certbot renew</pre>
