@@ -69,5 +69,6 @@ categories: linux
     <pre>$sudo certbot renew</pre>
 
 7. Set a cronjob to automaticall renew your certificates once per month.
+Since I am running nginx and certbot on the same instance I had to stop nginx before renewing the certificates and enable it after that. I have used the cron below to renew the certificates at midnight on the 1-st of each month.
 
     <pre>0 0 1 * * sudo /etc/init.d/nginx stop; sudo /usr/bin/certbot renew; sudo /etc/init.d/nginx start</pre>
