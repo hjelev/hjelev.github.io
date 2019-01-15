@@ -14,9 +14,9 @@ categories: linux
 2. Once LetsEncrypt is installed we have to generate the certificate:
     <pre>$sudo certbot certonly --standalone -d example.com -d www.example.com</pre>
     
-(You need to replace example.com with your domain name)
+    (You need to replace example.com with your domain name)
 
-The certificate files will be located at: `/etc/letsencrypt/live/example.com`
+    The certificate files will be located at: `/etc/letsencrypt/live/example.com`
 
 3. Once the certificate is generated we need to modify the nginx configuration file for that domain.
 The configuration file that we need to modify is located in `/etc/nginx/sites-available` .
