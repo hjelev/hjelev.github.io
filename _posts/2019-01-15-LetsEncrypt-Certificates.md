@@ -67,3 +67,7 @@ categories: linux
 
     Let's Encrypt certificates are valid for 90 days. To renew your expiring certificate(s) use the command below:
     <pre>$sudo certbot renew</pre>
+
+7. Set a cronjob to automaticall renew your certificates once per month.
+
+    <pre>0 0 1 * * sudo /etc/init.d/nginx stop; sudo /usr/bin/certbot renew; sudo /etc/init.d/nginx start</pre>
