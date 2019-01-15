@@ -17,7 +17,8 @@ categories: linux
     (You need to replace example.com with your domain name)
 
     The certificate files will be located at: `/etc/letsencrypt/live/example.com`
-
+    ![CertBot](/static/img/certbot-logo.png)
+    
 3. Once the certificate is generated we need to modify the nginx configuration file for that domain.
     The configuration file that we need to modify is located in `/etc/nginx/sites-available` .
 
