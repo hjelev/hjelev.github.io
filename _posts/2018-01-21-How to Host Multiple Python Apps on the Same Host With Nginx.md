@@ -4,6 +4,9 @@ title: How to Host Multiple Python Apps on the Same Host With Nginx
 date:   2018-01-21
 categories: linux
 ---
+# Configure NGINX as a reverse proxy
+
+![NGINX](/static/img/nginx-logo.svg)
 
 In this tutorial we assume that there are two python applications / sites running on ports 8000 and 8001 and we need to point example1.com to the application on port 8000 and example2.com to the application on port 8001.
 
