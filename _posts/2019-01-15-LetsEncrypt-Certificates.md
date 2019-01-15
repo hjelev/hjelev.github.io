@@ -16,7 +16,12 @@ categories: linux
     
     (You need to replace example.com with your domain name)
 
+    During the generation you'll be asked for email address which LetsEncrypt will use to contact you if there are issues with the certificate.
     The certificate files will be located at: `/etc/letsencrypt/live/example.com`
+    
+    If you are running nginx on the same machine you'll get an error that port 80 is not available as its used for prooving that you are the domain owner. If this is the case you'll need to stop nginx during the certificate generation `$sudo /etc/init.d/nginx stop` and enable it once the generation is completed `$sudo /etc/init.d/nginx start` . 
+    
+    
     ![CertBot](/static/img/certbot-logo.png)
     
 3. Once the certificate is generated we need to modify the nginx configuration file for that domain.
