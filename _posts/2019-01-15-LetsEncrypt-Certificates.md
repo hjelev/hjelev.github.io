@@ -4,19 +4,16 @@ title: Install LetsEncrypt Certificate
 date: 2019-01-15
 categories: linux
 ---
-# In this article I'll explain how I installed LetsEncrypt certificate for my home-assistant instance that is behind a nginx reverse proxy.
-
 ![LetsEncrypt](/static/img/letsencrypt.png)
+
+# In this article I'll explain how I installed LetsEncrypt certificate for my home-assistant instance that is behind a nginx reverse proxy.
 
 1. We need to install Let’s Encrypt:
    <pre>$sudo apt-get install certbot</pre>
   
 2. Once LetsEncrypt is installed we have to generate the certificate:
-
     <pre>$sudo certbot certonly --standalone -d example.com -d www.example.com</pre>
-
 (You need to replace example.com with your domain name)
-
 The certificate files will be located at: `/etc/letsencrypt/live/example.com`
 
 3. Once the certificate is generated we need to modify the nginx configuration file for that domain.
