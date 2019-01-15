@@ -6,6 +6,8 @@ categories: linux
 ---
 # In this article I'll explain how I installed LetsEncrypt certificate for my home-assistant instance that is behind a nginx reverse proxy.
 
+![LetsEncrypt](/static/img/letsencrypt.png)
+
 1. We need to install Let’s Encrypt:
    <pre>$sudo apt-get install certbot</pre>
   
