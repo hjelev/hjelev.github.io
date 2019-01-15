@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Install LetsEncrypt Certificate
+title: Install LetsEncrypt Certificates
 date: 2019-01-15
 categories: linux
 ---
