@@ -65,5 +65,5 @@ After nginx is restarted to load the new sites we just created they should be re
 
 You can use this method to host more than two sites, just make sure you use the correct domain and port number in the nginx sites-available configuration file.
 
-If you want to install SSL certificates for your domains you can look at this article - [Install LetsEncrypt Certificate](/Install LetsEncrypt Certificate).
-[Install LetsEncrypt Certificate]({% post_url 2019-01-15-LetsEncrypt-Certificates %})
+If you want to install SSL certificates for your domains you can look at this article -
+[Install LetsEncrypt Certificate]({% post_url 2019-01-15-LetsEncrypt-Certificates %}) .
