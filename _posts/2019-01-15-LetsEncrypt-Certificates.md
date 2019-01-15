@@ -56,5 +56,6 @@ categories: linux
     <pre>$sudo /etc/init.d/nginx reload</pre>
 
 6. Renew your certificates:
-Let's Encrypt certificates are valid for 90 days. To renew your expiring certificate(s) use the command below:
+
+    Let's Encrypt certificates are valid for 90 days. To renew your expiring certificate(s) use the command below:
     <pre>$sudo certbot renew</pre>
