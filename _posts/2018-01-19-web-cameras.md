@@ -5,15 +5,15 @@ date: 2018-01-19
 categories: webcams
 ---
 
-Collection of sites offering free live webcamera feeds from around the world
+# Collection of sites offering free live webcamera feeds from around the world
 
-- [webcamhopper.com](http://www.webcamhopper.com/) - Live Webcams from Around the World
+- [webcamhopper.com](http://www.webcamhopper.com/){:target="_blank"} - Live Webcams from Around the World
 
-- [lookr.com](https://www.lookr.com/) - Explore & Enjoy Beautiful Places
+- [lookr.com](https://www.lookr.com/){:target="_blank"} - Explore & Enjoy Beautiful Places
 
-- [earthcam.com](http://www.earthcam.com/) - EarthCam is the leading network of live webcams and offers the most comprehensive search engine of internet cameras from around the world. 
+- [earthcam.com](http://www.earthcam.com/){:target="_blank"} - EarthCam is the leading network of live webcams and offers the most comprehensive search engine of internet cameras from around the world. 
 
-- [weather-webcam.eu](http://weather-webcam.eu/) -  Webcams from Bulgaria and around the world
+- [weather-webcam.eu](http://weather-webcam.eu/){:target="_blank"} -  Webcams from Bulgaria and around the world
  
 
 [//]: # "- []() - "
