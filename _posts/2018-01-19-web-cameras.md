@@ -6,6 +6,7 @@ categories: webcams
 ---
 
 # Collection of sites offering free live webcamera feeds from around the world
+![Public Ip Cameras](/static/img/ip-camera.png)
 
 - [webcamhopper.com](http://www.webcamhopper.com/){:target="_blank"} - Live Webcams from Around the World
 
