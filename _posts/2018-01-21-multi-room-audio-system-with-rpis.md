@@ -32,7 +32,7 @@ For the hosting of the logitec media server you can use your desktop computer, a
 Go to <a href="https://www.mysqueezebox.com/download" target="_blank">Logitec Media Server</a> site and download the version matching your OS choice.
 
 <a href="http://wiki.slimdevices.com/index.php/Logitech_Media_Server#Installing_to_a_Computer_or_Laptop" target="_blank">Here you can find instructions for installing LMS on different operation systems</a>
-
+ ![Logitec Media Server](/static/img/logitech-logo.png)
 
 Preparing the raspberry pi SD card:
 ----------
@@ -62,8 +62,7 @@ wpa_supplicant.conf
 9. Update your system packages by running
     <pre>$ sudo apt-get -y update && sudo apt-get -y dist-upgrade</pre>
  This will take some time.
- ![Logitec Media Server](/static/img/logitech-logo.png)
- 
+
 10. Install some libraries that are needed by squeezelite
     <pre>$ sudo apt-get install -y libflac-dev libfaad2 libmad0</pre>
 11. Create a folder for squeezelite and download it:
@@ -166,5 +165,7 @@ How can we Control the system?
 -------------------
 
 The easiest way is to use the web interface located at http://lms_server_ip:9000 (you can change that port to 80 from LMS configuration)
+
+ ![Logitec Media Server web interface](/static/img/Logitech-Media-Server-500x366.png)
 
 You can also use a phone application to play your music. The best I found for android phones is [squeezer](https://play.google.com/store/apps/details?id=uk.org.ngo.squeezer){:target="_blank"}. It automatically discovers my LSM when on the same network and allows me to control most of the functions of the server.
