@@ -9,7 +9,7 @@ categories: raspberry-pi
 
 Logitec Media Server <a href="https://www.mysqueezebox.com/download" target="_blank">LMS</a> is a media server made for the logitec squeezebox Network music players. We will use this software for our project and will build squeezebox players using a raspberry pi, USB sound card and some multimedia speakers.
 
-![Raspberry pi 0 w](/static/img/RaspberryPi-Zero-W-Top_128x.png)![Logitec Media Server](/static/img/logitech-logo.png)
+![Raspberry pi 0 w](/static/img/RaspberryPi-Zero-W-Top_128x.png)
 
 The parts we need:
 ----------
@@ -62,6 +62,7 @@ wpa_supplicant.conf
 9. Update your system packages by running
     <pre>$ sudo apt-get -y update && sudo apt-get -y dist-upgrade</pre>
  This will take some time.
+ ![Logitec Media Server](/static/img/logitech-logo.png)
 10. Install some libraries that are needed by squeezelite
     <pre>$ sudo apt-get install -y libflac-dev libfaad2 libmad0</pre>
 11. Create a folder for squeezelite and download it:
