@@ -32,7 +32,8 @@ For the hosting of the logitec media server you can use your desktop computer, a
 Go to <a href="https://www.mysqueezebox.com/download" target="_blank">Logitec Media Server</a> site and download the version matching your OS choice.
 
 <a href="http://wiki.slimdevices.com/index.php/Logitech_Media_Server#Installing_to_a_Computer_or_Laptop" target="_blank">Here you can find instructions for installing LMS on different operation systems</a>
- ![Logitec Media Server](/static/img/logitech-logo.png)
+
+![Logitec Media Server](/static/img/logitech-logo.png)
 
 Preparing the raspberry pi SD card:
 ----------
