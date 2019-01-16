@@ -16,5 +16,6 @@ categories: webcams
 
 - [weather-webcam.eu](http://weather-webcam.eu/){:target="_blank"} -  Webcams from Bulgaria and all around Europe.
  
-I love webcams and this is a list of the good sites I have found. If you know some other interesting sites, post them in the comments.
-[//]: # "- []() - "
+I love webcams and this is a list of the good web sites I have stumbled. If you know some other interesting sites, post them in the comments.
+
+[//]: # "- [](){:target="_blank"} - "
