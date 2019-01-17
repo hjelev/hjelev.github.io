@@ -129,6 +129,8 @@ Once you start the web server you can preview your site at `http://localhost:800
 
 One of the best free places to host your static site for free is [Github Pages](https://pages.github.com/){:target="_blank"}
 
+![Github Pages](/static/img/github_logo.png)
+
 On github pages you'll find detailed instructions how to upload your site with git.
 If you don't have git installed you can install it with:
 
