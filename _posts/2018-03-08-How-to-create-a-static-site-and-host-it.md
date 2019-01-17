@@ -5,6 +5,7 @@ date:   2018-03-08
 categories: python
 ---
 In this articel I'll show you how to create a static html site with Pelican and host it for free at [GitHub Pages](https://pages.github.com/){:target="_blank"}.
+-------------------------
 
 ![Pelican](/static/img/python_pelican.png)
 
