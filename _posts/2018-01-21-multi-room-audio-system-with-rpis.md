@@ -8,7 +8,7 @@ categories: raspberry-pi
 # How to build cheap Multi-Room Audio System
 
 This build will use raspberry pis for network players and logitec media server that can be run on windows or linux.
-
+---------------
 Logitec Media Server <a href="https://www.mysqueezebox.com/download" target="_blank">LMS</a> is a media server made for the logitec squeezebox Network music players. We will use this software for our project and will build squeezebox players using a raspberry pi, USB sound card and some multimedia speakers.
 
 The parts we need:
@@ -57,7 +57,7 @@ wpa_supplicant.conf
             }</pre>
 5. To enable ssh create an empty file named `ssh` and place it in the boot partition.  
 6. Insert the SD card in the raspberry pi, connect the USB sound card using the cable adapter, connect the 5v power supply, after less than 1 minute it should boot and connect to the network.  
-7. Now you need to find the ip address of the raspberry pi, you can do that by checking the DHCP clients in you router control panel or use your phone and an application like [Fing](https://play.google.com/store/apps/details?id=com.overlook.android.fing){:target="_blank"} (there is also an iphone version of Fing)  
+7. Now you need to find the IP address of the raspberry pi, you can do that by checking the DHCP clients in you router control panel or use your phone and an application like [Fing](https://play.google.com/store/apps/details?id=com.overlook.android.fing){:target="_blank"} (there is also an iphone version of Fing)  
 8. Once you find the ip address ssh to it using [Putty](https://www.putty.org/){:target="_blank"} or your favorite ssh client.  
  When connecting use user `pi` and password `raspberry`  
  After you login for a first time change the default password with  
