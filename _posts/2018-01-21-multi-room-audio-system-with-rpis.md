@@ -5,11 +5,11 @@ date: 2018-01-21
 categories: raspberry-pi
 ---
 
-# How to build cheap Multi-Room Audio System with raspberry pis for network players and logitec media server.
+# How to build cheap Multi-Room Audio System
+
+This build will use raspberry pis for network players and logitec media server that can be run on windows or linux.
 
 Logitec Media Server <a href="https://www.mysqueezebox.com/download" target="_blank">LMS</a> is a media server made for the logitec squeezebox Network music players. We will use this software for our project and will build squeezebox players using a raspberry pi, USB sound card and some multimedia speakers.
-
-![Raspberry pi 0 w](/static/img/RaspberryPi-Zero-W-Top_128x.png)
 
 The parts we need:
 ----------
@@ -22,6 +22,8 @@ The parts we need:
 I have started my multi-room audio system with Logitech Multimedia 2.1 Speakers Z213 as they are very cheap and offer decent sound for their price - around $25. Later I have picked Logitech Z333.
 7. **USB hub** and **USB network card** - wi-fi or wired depending on your need - (You'll need this if you don't use pi zero w)
 
+![Raspberry pi 0 w](/static/img/RaspberryPi-Zero-W-Top_128x.png)
+
 These are the parts we need to build one of ours network music players.
 
 We also need a computer for the Logitec Media Server - in my experience this server works best on windows computers. 
@@ -29,7 +31,7 @@ I am hosting mine on a PIPO X8 its a tablet like computer with 12v power supply,
 
 For the hosting of the logitec media server you can use your desktop computer, an old laptop, a raspberry pi (model 3 or 2), Netgear NAS and maybe something else. 
 
-Go to <a href="https://www.mysqueezebox.com/download" target="_blank">Logitec Media Server</a> site and download the version matching your OS choice.
+Go to <a href="https://www.mysqueezebox.com/download" target="_blank">Logitec Media Server</a> site and download the version matching your choice of OS.
 
 <a href="http://wiki.slimdevices.com/index.php/Logitech_Media_Server#Installing_to_a_Computer_or_Laptop" target="_blank">Here you can find instructions for installing LMS on different operation systems</a>
 
@@ -42,8 +44,8 @@ I'll show you how to prepare the SD card with a windows computer. This is the SD
 
 1. Download and install [Win32 Disk Imager](https://sourceforge.net/projects/win32diskimager/){:target="_blank"} on your PC.
 2. Download [Raspbian Stretch Lite](https://www.raspberrypi.org/downloads/raspbian/){:target="_blank"} image from raspberrypi.org site. (you can also use the full version but there is no need to do so and its bigger)
-3. Use Win32 disk imager to write the rasbian image you have just downloaded to the SD card.
-4. If you plan to connect this player/rpi via wifi, now is the time to configure the wi-fi network credentials (if you don't do so now you'll have to attach monitor and a keyboard to your rpi later)
+3. Use [Win32 disk imager](https://freeapps.ml/win32-disk-imager.html){:target="_blank"} to write the rasbian image you have just downloaded to the SD card.
+4. If you plan to connect this player/rpi via wifi, now is the time to configure the wi-fi network credentials (if you don't do so now you'll have to attach monitor and a keyboard to your rpi later).
 Create a file `wpa_supplicant.conf` and place it in the `boot` partition.
 wpa_supplicant.conf
     <pre>
