@@ -1,8 +1,9 @@
+---
 layout: post
 title: How to Install Mosquitto Broker on Raspberry Pi
 date: 2021-04-12
 categories: raspberry-pi
-
+---
 # How to Install Mosquitto Broker on Raspberry Pi
 
 1. Install the mosquitto broker with the command below:
