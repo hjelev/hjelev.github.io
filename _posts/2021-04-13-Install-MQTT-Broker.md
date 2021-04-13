@@ -16,7 +16,7 @@ sudo apt install -y mosquitto mosquitto-clients
 
 3. move the password file to /etc/mosquitto
  
-`sud mv passwordfile /etc/mosquitto/`
+`sudo mv passwordfile /etc/mosquitto/`
  
 4. Update mosquitto broker config so it uses the created password file.
 
@@ -24,7 +24,8 @@ Create a custom config file in `/etc/mosquitto/conf.d`
 
 Here is the configuration I am using and it works fine with Home Assistant:
 
-```user mosquitto
+```
+user mosquitto
 max_queued_messages 200
 message_size_limit 0
 allow_zero_length_clientid true
