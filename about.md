@@ -10,8 +10,22 @@ It is build with [Jekyll](https://jekyllrb.com/){:target="_blank"} and hosted on
 
 Contect Form
 
-<form method="POST" action="https://formspree.io/jeleff@gmail.com">
-  <input type="email" name="email" placeholder="Your email"><br>
-  <textarea name="message" placeholder="Test Message"></textarea><br>
-  <button type="submit">Send Message</button><br>
+<!-- modify this form HTML and place wherever you want your form -->
+
+<form
+  action="https://formspree.io/f/xvodgobl"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="_replyto">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+
+  <!-- your other form fields go here -->
+
+  <button type="submit">Send</button>
 </form>
