@@ -2,7 +2,7 @@
 layout: post
 title: How to ssh using a certificate (not password)
 date: 2021-04-15
-categories: raspberry-pi
+categories: linux
 ---
 
 1. Generate the certificate on the machine you are going to login from:
