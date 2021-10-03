@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ubuntu Customizations CLI
-date: 2021-`0-04
+date: 2021-10-04
 categories: Ubuntu
 ---
 
