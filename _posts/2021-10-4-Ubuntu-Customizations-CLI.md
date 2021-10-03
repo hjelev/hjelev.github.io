@@ -5,7 +5,7 @@ date: 2021-`0-04
 categories: Ubuntu
 ---
 
-#How do I enable 'minimize on click' on Ubuntu dock
+# How do I enable 'minimize on click' on Ubuntu dock
 
 Open Terminal and run
 
