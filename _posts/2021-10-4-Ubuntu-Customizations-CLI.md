@@ -32,7 +32,7 @@ To reset to the default setting:
 `gsettings reset org.gnome.shell.extensions.dash-to-dock background-opacity`
 
 # Create wallpaper slideshow using a bash script and cron
-Save this script as a bash file, update the 'DIR' variable to point to your photo collection and schedule it with a cronjob.
+Save this script as a bash file, update the `DIR` variable to point to your photo collection and schedule it with a cronjob.
 ```
 #!/usr/bin/env bash
 # Get the Real Username
