@@ -2,7 +2,7 @@
 layout: post
 title: Ubuntu Customizations CLI
 date: 2021-10-04
-categories: Ubuntu
+categories: ubuntu
 ---
 
 # How do I enable 'minimize on click' on Ubuntu dock
