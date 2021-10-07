@@ -35,9 +35,12 @@ To reset to the default setting:
 Save this script as a bash file, update the `DIR` variable to point to your photo collection and schedule it with a cronjob.
 ```
 #!/usr/bin/env bash
+
 # Update the DIR variable to point to your photos
+
 DIR="/home/masoko/Pictures/wallpapers/reddit"
 PIC=$(ls $DIR/* | shuf -n1)
+
 RUID=$(who | awk 'FNR == 1 {print $1}')
 RUSER_UID=$(id -u ${RUID})
 sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.background picture-uri "file://$PIC"
