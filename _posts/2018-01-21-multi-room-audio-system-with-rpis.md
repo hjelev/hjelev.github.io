@@ -26,12 +26,12 @@ I have started my multi-room audio system with Logitech Multimedia 2.1 Speakers 
 
 These are the parts we need to build one of ours network music players.
 
-We also need a computer for the Logitec Media Server - in my experience this server works best on windows computers. 
+We also need a computer for the Logitech Media Server - in my experience this server works best on windows computers. 
 I am hosting mine on a PIPO X8 its a tablet like computer with 12v power supply, Windows 10, Intel Z3736F Quad Core CPU, 2GB ram and 64GB disk space. 
 
-For the hosting of the logitec media server you can use your desktop computer, an old laptop, a raspberry pi (model 3 or 2), Netgear NAS and maybe something else. 
+For the hosting of the logitech media server you can use your desktop computer, an old laptop, a raspberry pi (model 3 or 2), Netgear NAS and maybe something else. 
 
-Go to <a href="https://www.mysqueezebox.com/download" target="_blank">Logitec Media Server</a> site and download the version matching your choice of OS.
+Go to <a href="https://www.mysqueezebox.com/download" target="_blank">Logitech Media Server</a> site and download the version matching your choice of OS.
 
 <a href="http://wiki.slimdevices.com/index.php/Logitech_Media_Server#Installing_to_a_Computer_or_Laptop" target="_blank">Here you can find instructions for installing LMS on different operation systems</a>
 
@@ -40,11 +40,11 @@ Go to <a href="https://www.mysqueezebox.com/download" target="_blank">Logitec Me
 Preparing the raspberry pi SD card:
 ----------
 
-I'll show you how to prepare the SD card with a windows computer. This is the SD card we'll use for our network music players.
+I'll show you how to prepare the SD card with a Windows computer. This is the SD card we'll use for our network music players.
 
 1. Download and install [Win32 Disk Imager](https://freeapps.ml/win32-disk-imager.html){:target="_blank"} on your PC.
-2. Download [Raspbian Stretch Lite](https://www.raspberrypi.org/downloads/raspbian/){:target="_blank"} image from raspberrypi.org site. (you can also use the full version but there is no need to do so and its bigger)
-3. Use Win32 disk imager to write the rasbian image you have just downloaded to the SD card.
+2. Download [Raspbian Stretch Lite](https://www.raspberrypi.org/downloads/raspbian/){:target="_blank"} image from raspberrypi.org site. (you can also use the full version but there is no need to do so and it is bigger)
+3. Use Win32 disk imager to write the raspbian image you have just downloaded to the SD card.
 4. If you plan to connect this player/rpi via wifi, now is the time to configure the wi-fi network credentials (if you don't do so now you'll have to attach monitor and a keyboard to your rpi later).
 Create a file `wpa_supplicant.conf` and place it in the `boot` partition.
 wpa_supplicant.conf
@@ -60,7 +60,7 @@ wpa_supplicant.conf
 7. Now you need to find the IP address of the raspberry pi, you can do that by checking the DHCP clients in you router control panel or use your phone and an application like [Fing](https://play.google.com/store/apps/details?id=com.overlook.android.fing){:target="_blank"} (there is also an iphone version of Fing)  
 8. Once you find the ip address ssh to it using [Putty](https://www.putty.org/){:target="_blank"} or your favorite ssh client.  
  When connecting use user `pi` and password `raspberry`  
- After you login for a first time change the default password with  
+ After you log in for a first time change the default password with  
     <pre>$ passwd</pre> 
 9. Update your system packages by running
     <pre>$ sudo apt-get -y update && sudo apt-get -y dist-upgrade</pre>
@@ -120,13 +120,13 @@ You can test the other USB devices and decide for yourself.
 `-n` sets the name of the player - the name that you'll see when you control it.  
 `-m` is the mac address of the network player - pick a random mac address - it should be unique for each player in your network.  
 `-o` is the output device used for the playback (your USB sound card)  
-If you don't see any error go to logitec media server and check if you see your new player (the players are listed in the top right section of LMS web control panel). 
+If you don't see any error go to logitech media server and check if you see your new player (the players are listed in the top right section of LMS web control panel). 
 You can test the player to make sure its working properly.
 When done testing you can close the server with `Ctrl+C`
 14. Starting Squeezelite on Startup.  
 There are many ways you can use to start the player on start up. The easiest one I have found is using `crontab`.
     <pre>$ crontab -e</pre>
-and add this line some where in the file 
+and add this line somewhere in the file 
     <pre>@reboot sudo -u pi /home/pi/squeezelite/squeezelite -n Player_Name -m 15:c4:20:16:b7:4f -o front:CARD=Device,DEV=0 & </pre>
 15. Reboot your raspberry pi to make sure the player is loaded on startup.
 This is all you need to do to create a new network music player for your multi-room audio system. 
@@ -139,27 +139,27 @@ The players can work fine on wi-fi if you have decent wi-fi coverage.
 It is recommended that you run your LM server on a wired connection thus it can also work on wi-fi.
 
 The stability of the players mainly depends on the choice of the USB sound card. I have tested maybe 5 different cheap (up to $3) sound cards and only the one listed in the parts section works without causing problems. The others will make the player hung in silence or repeating a very annoying sound. 
-If you use raspbery pi zero, when playing music the CPU load should be around 0.15.
+If you use raspberry pi zero, when playing music the CPU load should be around 0.15.
 If you want better sound and you can afford to pay more you can build your players with [HiFiBerry Amplifier](https://www.hifiberry.com/){:target="_blank"} or some other rapsberry pi compatible Amplifier.
 
 Using a bad SD card can also affect the system stability.
 
-I am using such multi-room audio system with 2 raspbery pi network players that run 24/7 - one on wi-fi the other on LAN and there are months with no outages.
+I am using such multi-room audio system with 2 raspberry pi network players that run 24/7 - one on wi-fi the other on LAN and there are months with no outages.
 There is also a third player on my windows desktop PC - this one causes no issues but it is rebooted daily.
 
 If some player (mainly the wi-fi one) disappears from the network or I don't see it in LMS I just restart it from the plug and it comes back in a minute.
 
-You can start a network player on the computer running the logitec media server using a build in plug-in.
+You can start a network player on the computer running the logitech media server using a build in plug-in.
 
 
 What media is supported by my multi-room audio system?
 --------------------------
 
-Logitec Media Server supports many audio sources that you can enjoy now:
+Logitech Media Server supports many audio sources that you can enjoy now:
 
 1. Your own MP3 collection, it can be located on any samba share in your network or the computer running the server.
 2. Spotify - you need a paid account.
-3. Many free on-line sources like SomaFM, SoundClound, TuneIn Radio (tons of on-line radio stations), You Tube and others - these depends on your location. You can see them all [here](https://www.mysqueezebox.com/appgallery){:target="_blank"}.
+3. Many free on-line sources like SomaFM, SoundCloud, TuneIn Radio (tons of on-line radio stations), YouTube and others - these depends on your location. You can see them all [here](https://www.mysqueezebox.com/appgallery){:target="_blank"}.
 4. Custom streams from URLs you add.
 
 You can use your new multi-room audio system to play synchronized music in all of your rooms or if you prefer you can play different music in each room. You can also have a group of synchronized players and stand alone players playing different music.
