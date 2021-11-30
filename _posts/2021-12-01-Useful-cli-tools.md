@@ -5,7 +5,7 @@ date: 2021-12-01
 categories: ubuntu, cli
 ---
 
-## FD
+## fd
 https://github.com/sharkdp/fd/
 
 fd is a program to find entries in your filesystem. It is a simple, fast and user-friendly alternative to find. While it does not aim to support all of find's powerful functionality, it provides sensible (opinionated) defaults for a majority of use cases.
@@ -15,12 +15,46 @@ sudo apt install fd-find
 ```
 Note that the binary is called **fdfind** as the binary name fd is already used by another package. It is recommended that after installation, you add a link to fd by executing command ```ln -s $(which fdfind) ~/.local/bin/fd```
 
-##jq
-
+## jq
 https://github.com/stedolan/jq
 
 jq is like sed for JSON data - you can use it to slice and filter and map and transform structured data with the same ease that sed, awk, grep and friends let you play with text.
 
 ```bash
 sudo apt install jq
+```
+
+## bat
+https://github.com/sharkdp/bat
+
+bat supports syntax highlighting for a large number of programming and markup languages.  
+
+bat communicates with git to show modifications with respect to the index (see left side bar):
+
+```bash
+sudo apt install bat
+```
+Important: If you install bat this way, please note that the executable may be installed as **batcat** instead of bat (due to a name clash with another package). You can set up a bat -> batcat symlink or alias to prevent any issues that may come up because of this and to be consistent with other distributions:
+```bash
+mkdir -p ~/.local/bin
+ln -s /usr/bin/batcat ~/.local/bin/bat
+```
+
+## fff
+https://github.com/dylanaraps/fff
+
+A simple file manager written in bash.
+```bash
+git clone https://github.com/dylanaraps/fff
+cd fff
+make install
+```
+### CD on Exit
+To enable CD on Exit in Bash or Zsh, add this to your .bashrc, .zshrc or equivalent.  
+Run 'fff' with 'f' or whatever you decide to name the function.
+```bash
+f() {
+fff "$@"
+cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
+}
 ```
