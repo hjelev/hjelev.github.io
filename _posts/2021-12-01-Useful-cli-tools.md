@@ -58,3 +58,12 @@ fff "$@"
 cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
 }
 ```
+
+## duf
+https://github.com/muesli/duf
+
+Disk Usage/Free Utility (Linux, BSD, macOS & Windows)
+
+```bash
+sudo apt install duf
+```
