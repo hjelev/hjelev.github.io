@@ -2,7 +2,8 @@
 layout: post
 title: Useful CLI tools
 date: 2021-12-01
-categories: ubuntu cli
+categories: ubuntgup
+
 ---
 # Github repos for some usefull CLI tools I use daily
 ## fd
