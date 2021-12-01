@@ -110,3 +110,13 @@ ohmyzsh themes I use:
 ZSH_THEME="gallois"  
 ZSH_THEME="af-magic"  
 ```
+
+***
+## btop
+[https://github.com/aristocratos/btop](https://github.com/aristocratos/btop){:target="_blank"}
+
+![btop screenshot](/static/img/btop-screenshot.png)  
+Resource monitor that shows usage and stats for processor, memory, disks, network and processes.
+```bash
+snap install btop
+```
