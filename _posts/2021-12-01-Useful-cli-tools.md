@@ -2,7 +2,7 @@
 layout: post
 title: Useful CLI tools
 date: 2021-12-01
-categories: ubuntgup
+categories: ubuntu
 
 ---
 # Github repos for some usefull CLI tools I use daily
