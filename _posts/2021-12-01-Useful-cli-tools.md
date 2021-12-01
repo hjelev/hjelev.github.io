@@ -17,7 +17,7 @@ Note that the binary is called **fdfind** as the binary name fd is already used 
 ***
 ## jq
 [https://github.com/stedolan/jq](https://github.com/stedolan/jq){:target="_blank"}
-
+![jq screenshot](/static/img/jq-screenshot.png)  
 jq is like sed for JSON data - you can use it to slice and filter and map and transform structured data with the same ease that sed, awk, grep and friends let you play with text.
 
 ```bash
