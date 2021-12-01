@@ -42,7 +42,7 @@ ln -s /usr/bin/batcat ~/.local/bin/bat
 ***
 ## fff
 [https://github.com/dylanaraps/fff](https://github.com/dylanaraps/fff){:target="_blank"}
-
+![fff screenshot](/static/img/fff-screenshot.png)  
 A simple file manager written in bash.
 ```bash
 git clone https://github.com/dylanaraps/fff
