@@ -26,7 +26,7 @@ sudo apt install jq
 ***    
 ## bat
 [https://github.com/sharkdp/bat](https://github.com/sharkdp/bat){:target="_blank"}
-
+![bat screenshot](/static/img/bat-screenshot.png)  
 bat supports syntax highlighting for a large number of programming and markup languages.  
 
 bat communicates with git to show modifications with respect to the index (see left side bar):
