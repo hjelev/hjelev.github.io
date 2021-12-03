@@ -5,7 +5,7 @@ date: 2021-12-01
 categories: ubuntu
 
 ---
-# Github repos for some usefull CLI tools I use daily
+# Github repos for some usefull CLI tools
 ## fd
 [https://github.com/sharkdp/fd/](https://github.com/sharkdp/fd/){:target="_blank"}
 ![fd screenshot](/static/img/fd-screenshot.png)  
@@ -118,4 +118,14 @@ ZSH_THEME="af-magic"
 Resource monitor that shows usage and stats for processor, memory, disks, network and processes.
 ```bash
 snap install btop
+```
+
+***
+## HTTPie
+[https://github.com/httpie/httpie](https://github.com/httpie/httpie){:target="_blank"}
+
+HTTPie is a command-line HTTP client. Its goal is to make CLI interaction with web services as human-friendly as possible. HTTPie is designed for testing, debugging, and generally interacting with APIs & HTTP servers. The http & https commands allow for creating and sending arbitrary HTTP requests. They use simple and natural syntax and provide formatted and colorized output.
+
+```bash
+sudo apt install httpie
 ```
