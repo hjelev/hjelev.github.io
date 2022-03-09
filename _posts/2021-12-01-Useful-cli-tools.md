@@ -99,9 +99,10 @@ Plugins for ohmyzsh:
 plugins=(git macos common-aliases dirhistory zsh-autosuggestions zsh-syntax-highlighting)
 ```
 
-All of these plugins come with ohmyzsh and they only need to be included in ``` ~/.zshrc``` except **zsh-syntax-highlighting**, which needs to be installed additionally with the command below:
+All of these plugins come with ohmyzsh and they only need to be included in ``` ~/.zshrc``` except **zsh-syntax-highlighting** and **zsh-autosuggestions**, which needs to be installed additionally with the commands below:
 ```bash
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
 ohmyzsh themes I use:  
