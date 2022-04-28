@@ -11,6 +11,8 @@ Collection of software for raspberry pi
 
 - [Pi-Hole](http://pi-hole.net/){:target="_blank"} - black hole for Internet advertisements.
 
+- [AdGuard](https://github.com/AdguardTeam/AdGuardHome#getting-started){:target="_blank"} - good alternative to Pi-Hole but not open source.
+
 - [Home Assistant](https://home-assistant.io/){:target="_blank"} - open-source home automation platform running on Python 3. Track and control all devices at home and automate control. Installation in less than a minute.
 
 - [CUPS](http://www.instructables.com/id/Turn-any-printer-into-a-wireless-printer-with-a-Ra/?ALLSTEPS){:target="_blank"} - Turn any printer into a wireless printer with a Raspberry Pi
