@@ -9,7 +9,7 @@ Set in your .bashrc or .zshrc file:
 ```
 export username="git-hub-token"
 ```
-
+Then run the command below to save your credentials
 ```
 git remote set-url origin https://username:$username@github.com/username/repo-name.git
 ```
