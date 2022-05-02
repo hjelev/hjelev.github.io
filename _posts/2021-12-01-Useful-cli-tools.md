@@ -77,7 +77,7 @@ exa is a modern replacement for the venerable file-listing command-line program 
 By deliberately making some decisions differently, exa attempts to be a more featureful, more user-friendly version of ls.
 
 ```bash
-sudo apt install bat
+sudo apt install exa
 ```
 ***
 ## ohmyzsh
