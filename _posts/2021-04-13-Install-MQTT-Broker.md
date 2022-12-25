@@ -22,15 +22,16 @@ sudo apt install -y mosquitto mosquitto-clients
 
 Create a custom config file in `/etc/mosquitto/conf.d`
 
+`sudo nano /etc/mosquitto/conf.d/config.cfg`
+
 Here is the configuration I am using and it works fine with Home Assistant:
 
 ```
 user mosquitto
 max_queued_messages 200
-message_size_limit 0
+listener 1883 0.0.0.0
 allow_zero_length_clientid true
 allow_duplicate_messages false 
-listener 1883
 autosave_interval 900
 autosave_on_changes false
 persistence true
