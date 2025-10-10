@@ -9,12 +9,15 @@ categories: linux
 <h2>Extentions:</h2>
 
 Dash to Panel - https://extensions.gnome.org/extension/1160/dash-to-panel/
+
 Desktop Widgets (Desktop Clock) - https://extensions.gnome.org/extension/5156/desktop-clock/
+
 ArcMenu - https://extensions.gnome.org/extension/3628/arcmenu/
 
 <h2>Apps:</h2>
 
 Variety - Desktop wallpaper downloader and changer
+
 ```
 sudo apt install variety
 ```
