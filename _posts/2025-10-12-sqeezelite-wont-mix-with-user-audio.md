@@ -84,4 +84,4 @@ We create a configuration file that tells your desktop environment to launch Squ
 1.  **Log out** of your desktop session.
 2.  **Log back in.**
 
-Squeezelite will now start automatically in the background as your user, correctly connecting to the **PipeWire** mixing server. You can now stream music to Squeezelite while simultaneously watching a YouTube video or listening to other audio in your browser\! 🎉
+Squeezelite will now start automatically in the background as your user, correctly connecting to the **PipeWire** mixing server. You can now stream music to Squeezelite while simultaneously watching a YouTube video or listening to other audio in your browser\! 
