@@ -5,7 +5,12 @@ logo: /static/img/avatar2.jpg
 github: https://github.com/hjelev
 about: blog.masoko.net
 theme: no-style-please
+# Use the remote_theme plugin for non-supported themes
 remote_theme: riggraz/no-style-please
+plugins:
+  - jekyll-remote-theme
+  - jekyll-feed # (If you were using this theme's other features)
+  - jekyll-seo-tag # (If you were using this theme's other features)
 baseurl: ""
 url: ""
 
