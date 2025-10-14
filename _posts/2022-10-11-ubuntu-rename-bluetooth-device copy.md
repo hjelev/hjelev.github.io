@@ -3,7 +3,7 @@ layout: post
 title: Rename bluetooth device in Ubuntu
 date: 2022-10-18
 categories: linux
-
+---
 
 Use bt-device (part of the bluez-tools package).
 ```

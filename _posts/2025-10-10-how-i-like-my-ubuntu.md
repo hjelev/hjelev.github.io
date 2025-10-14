@@ -3,6 +3,7 @@ layout: post
 title: How I like my Ubuntu
 date: 2025-10-10
 categories: linux
+---
 
 <h1>Widgets and Apps I install immediately after Ubuntu</h1>
 

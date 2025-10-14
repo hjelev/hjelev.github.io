@@ -3,6 +3,7 @@ layout: post
 title: Squeezelite Service Not Mixing with Browser Audio (PipeWire/PulseAudio Fix)
 date: 2025-10-12
 categories: linux
+---
 
 # Squeezelite Service Not Mixing with Browser Audio (PipeWire/PulseAudio Fix)
 
