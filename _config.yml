@@ -4,7 +4,7 @@ author: Hristo Jelev
 logo: /static/img/avatar2.jpg
 github: https://github.com/hjelev
 about: blog.masoko.net
-theme: no-style-please
+#theme: no-style-please
 # Use the remote_theme plugin for non-supported themes
 remote_theme: riggraz/no-style-please
 plugins:
