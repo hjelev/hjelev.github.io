@@ -4,7 +4,8 @@ author: Hristo Jelev
 logo: /static/img/avatar2.jpg
 github: https://github.com/hjelev
 about: blog.masoko.net
-
+theme: no-style-please
+remote_theme: riggraz/no-style-please
 baseurl: ""
 url: ""
 
