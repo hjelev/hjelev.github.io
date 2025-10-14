@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 💡 Solved: Squeezelite Service Not Mixing with Browser Audio (PipeWire/PulseAudio Fix)
+title: Squeezelite Service Not Mixing with Browser Audio (PipeWire/PulseAudio Fix)
 date: 2025-10-12
 categories: linux
 
-# 💡 Solved: Squeezelite Service Not Mixing with Browser Audio (PipeWire/PulseAudio Fix)
+# Squeezelite Service Not Mixing with Browser Audio (PipeWire/PulseAudio Fix)
 
 The Squeezelite audio player is a wonderful headless solution, but getting it to run as a reliable, shareable background service on modern Linux distributions (like Ubuntu, Debian, or Fedora, especially those using PipeWire) can be a nightmare.
 
