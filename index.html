@@ -3,137 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hristo Zhelev - Developer Portfolio & Projects</title>
+    <title>Hristo Zhelev — Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .glow-bg {
-            background: radial-gradient(circle at 50% -20%, #1e293b 0%, #0f172a 60%);
+        body { font-family: 'Inter', sans-serif; }
+
+        .bg-scene {
+            background:
+                radial-gradient(ellipse 90% 55% at 50% -5%, rgba(56,189,248,0.07) 0%, transparent 65%),
+                radial-gradient(ellipse 55% 40% at 85% 85%, rgba(99,102,241,0.05) 0%, transparent 60%),
+                #080e1c;
         }
-        
+
+        .avatar-ring {
+            background: conic-gradient(from 180deg, #38bdf8, #6366f1, #38bdf8);
+            border-radius: 9999px;
+            padding: 2px;
+        }
+
+        .card {
+            position: relative;
+            transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            box-shadow: 0 0 0 1px rgba(56,189,248,0.15), 0 4px 24px rgba(0,0,0,0.3);
+        }
+
+        .arrow { transition: transform 0.18s ease; }
+        a:hover .arrow { transform: translateX(3px); }
+
+        .tag-rust    { background: rgba(249,115,22,0.12); color: #fb923c; border-color: rgba(249,115,22,0.25); }
+        .tag-python  { background: rgba(59,130,246,0.12); color: #60a5fa; border-color: rgba(59,130,246,0.25); }
+        .tag-grafana { background: rgba(251,191,36,0.10); color: #fbbf24; border-color: rgba(251,191,36,0.22); }
+        .tag-green   { background: rgba(34,197,94,0.10);  color: #4ade80; border-color: rgba(34,197,94,0.22);  }
+        .tag-slate   { background: rgba(148,163,184,0.08); color: #94a3b8; border-color: rgba(148,163,184,0.18); }
+
+        .section-rule {
+            display: flex; align-items: center; gap: 10px;
+        }
+        .section-rule::after {
+            content: ''; flex: 1; height: 1px;
+            background: linear-gradient(to right, rgba(148,163,184,0.12), transparent);
+        }
     </style>
 </head>
-<body class="glow-bg text-slate-200 font-sans antialiased min-h-screen flex flex-col justify-between py-16 px-4">
+<body class="bg-scene text-slate-200 min-h-screen flex flex-col py-16 px-4">
 
-    <main class="max-w-xl w-full mx-auto flex-grow flex flex-col items-center">
-        
-        <header class="text-center mb-10">
-            <div class="w-24 h-24 rounded-full bg-slate-800 border-2 border-slate-700 mx-auto mb-4 overflow-hidden flex items-center justify-center">
-                <img src="https://avatars.githubusercontent.com/u/12294475?v=4" 
-                     alt="Profile Avatar" 
-                     class="w-full h-full object-cover">
+    <main class="max-w-lg w-full mx-auto flex-grow flex flex-col items-center">
+
+        <header class="text-center mb-12">
+            <div class="avatar-ring w-[98px] h-[98px] mx-auto mb-5 flex items-center justify-center">
+                <div class="w-[90px] h-[90px] rounded-full overflow-hidden bg-slate-900">
+                    <img src="https://avatars.githubusercontent.com/u/12294475?v=4"
+                         alt="Hristo Zhelev"
+                         class="w-full h-full object-cover">
+                </div>
             </div>
             <h1 class="text-2xl font-bold tracking-tight text-white">Hristo Zhelev</h1>
-            <p class="text-slate-400 text-sm mt-1">Systems, Tools & Infrastructure</p>
+            <p class="text-slate-400 text-sm mt-1.5 tracking-wide">Systems · Tools · Infrastructure</p>
+            <div class="flex items-center justify-center gap-2 mt-3">
+                <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span class="text-xs text-slate-500">Building in public</span>
+            </div>
         </header>
 
-        <section class="w-full space-y-4">
-            
-            <div class="text-xs font-semibold tracking-wider text-slate-500 uppercase pt-2 pl-1">
-                Featured Projects
+        <section class="w-full space-y-2.5">
+
+            <div class="section-rule pt-1 pb-0.5">
+                <span class="text-xs font-semibold tracking-widest text-slate-500 uppercase">Featured Projects</span>
             </div>
 
-            <a href="https://masoko.net/sb" target="_blank" rel="noopener noreferrer" 
-               class="block p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-600 hover:bg-slate-900 transition-all duration-200 group">
-                <div class="flex justify-between items-start">
-                    <h2 class="font-medium text-white group-hover:text-sky-400 transition-colors">📂 Shell Buddy - TUI file manager with batteries included</h2>
-                    <span class="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded-md font-mono">Rust / TUI</span>
+            <a href="https://masoko.net/sb" target="_blank" rel="noopener noreferrer"
+               class="card block p-4 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 hover:bg-slate-900/75 group">
+                <div class="flex justify-between items-start gap-3">
+                    <h2 class="font-semibold text-white group-hover:text-sky-400 transition-colors text-sm">Shell Buddy</h2>
+                    <span class="tag-rust text-xs px-2 py-0.5 rounded-md border font-mono shrink-0">Rust / TUI</span>
                 </div>
-                <p class="text-slate-400 text-sm mt-1.5 leading-relaxed">
-                    sb is a fast, single-binary TUI built on ratatui + crossterm — focused on snappy local navigation with optional integrations for previews, archives, search, remote mounts, and lightweight Git workflows.
+                <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                    Fast, single-binary TUI file manager built on ratatui + crossterm — snappy local navigation with previews, archives, search, remote mounts, and Git workflows.
                 </p>
             </a>
 
-            <a href="https://masoko.net/lyrtui" target="_blank" rel="noopener noreferrer" 
-               class="block p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-600 hover:bg-slate-900 transition-all duration-200 group">
-                <div class="flex justify-between items-start">
-                    <h2 class="font-medium text-white group-hover:text-sky-400 transition-colors">🎵 Lyrtui - Lyrion Music Server TUI</h2>
-                    <span class="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded-md font-mono">Rust / TUI</span>
+            <a href="https://masoko.net/lyrtui" target="_blank" rel="noopener noreferrer"
+               class="card block p-4 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 hover:bg-slate-900/75 group">
+                <div class="flex justify-between items-start gap-3">
+                    <h2 class="font-semibold text-white group-hover:text-sky-400 transition-colors text-sm">Lyrtui</h2>
+                    <span class="tag-rust text-xs px-2 py-0.5 rounded-md border font-mono shrink-0">Rust / TUI</span>
                 </div>
-                <p class="text-slate-400 text-sm mt-1.5 leading-relaxed">
-                    A fast, keyboard & mouse driven terminal UI for Lyrion Music Server, written in Rust. Browse and search your music library, internet radio and streaming apps — with inline album art and an adaptive accent color.
+                <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                    Keyboard & mouse-driven terminal UI for Lyrion Music Server — browse your library, internet radio, and streaming apps with inline album art and adaptive accent colors.
                 </p>
             </a>
 
-            <a href="https://github.com/hjelev/rpi-mqtt-monitor" target="_blank" rel="noopener noreferrer" 
-               class="block p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-600 hover:bg-slate-900 transition-all duration-200 group">
-                <div class="flex justify-between items-start">
-                    <h2 class="font-medium text-white group-hover:text-sky-400 transition-colors">🥧 RPi MQTT Monitor</h2>
-                    <span class="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded-md font-mono">Python / Home Assistant</span>
+            <a href="https://github.com/hjelev/rpi-mqtt-monitor" target="_blank" rel="noopener noreferrer"
+               class="card block p-4 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 hover:bg-slate-900/75 group">
+                <div class="flex justify-between items-start gap-3">
+                    <h2 class="font-semibold text-white group-hover:text-sky-400 transition-colors text-sm">RPi MQTT Monitor</h2>
+                    <span class="tag-python text-xs px-2 py-0.5 rounded-md border font-mono shrink-0">Python / HA</span>
                 </div>
-                <p class="text-slate-400 text-sm mt-1.5 leading-relaxed">
-                    The easiest way to track your Raspberry Pi or Ubuntu computer system health and performance in Home Assistant.
+                <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                    The easiest way to track Raspberry Pi or Ubuntu system health and performance in Home Assistant via MQTT.
                 </p>
             </a>
 
-                        <div class="text-xs font-semibold tracking-wider text-slate-500 uppercase pt-2 pl-1">
-                Side projects & experiments
+            <div class="section-rule pt-4 pb-0.5">
+                <span class="text-xs font-semibold tracking-widest text-slate-500 uppercase">Side Projects</span>
             </div>
 
-            <a href="https://grafana.masoko.net" target="_blank" rel="noopener noreferrer" 
-               class="block p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-600 hover:bg-slate-900 transition-all duration-200 group">
-                <div class="flex justify-between items-start">
-                    <h2 class="font-medium text-white group-hover:text-sky-400 transition-colors">🌊 Black Sea water temperature</h2>
-                    <span class="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded-md font-mono">Grafana / dashboard</span>
+            <a href="https://grafana.masoko.net" target="_blank" rel="noopener noreferrer"
+               class="card block p-4 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 hover:bg-slate-900/75 group">
+                <div class="flex justify-between items-start gap-3">
+                    <h2 class="font-semibold text-white group-hover:text-sky-400 transition-colors text-sm">Black Sea Water Temperature</h2>
+                    <span class="tag-grafana text-xs px-2 py-0.5 rounded-md border font-mono shrink-0">Grafana</span>
                 </div>
-                <p class="text-slate-400 text-sm mt-1.5 leading-relaxed">
-                    A Grafana dashboard tracking the water temperature in the Black Sea, using data from the Bulgarian National Institute of Meteorology and Hydrology. Here you can find extensive historical data, real-time updates, and insights into seasonal trends and anomalies in the region's marine environment.
+                <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                    Dashboard tracking Black Sea water temperature via Bulgaria's National Institute of Meteorology — historical data, real-time updates, and seasonal trend analysis.
                 </p>
             </a>
 
-            <a href="https://fun.masoko.net" target="_blank" rel="noopener noreferrer" 
-               class="block p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-600 hover:bg-slate-900 transition-all duration-200 group">
-                <div class="flex justify-between items-start">
-                    <h2 class="font-medium text-white group-hover:text-sky-400 transition-colors">🙃 fun.masoko.net</h2>
-                    <span class="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded-md font-mono">Pelican / static-site</span>
+            <a href="https://fun.masoko.net" target="_blank" rel="noopener noreferrer"
+               class="card block p-4 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 hover:bg-slate-900/75 group">
+                <div class="flex justify-between items-start gap-3">
+                    <h2 class="font-semibold text-white group-hover:text-sky-400 transition-colors text-sm">fun.masoko.net</h2>
+                    <span class="tag-green text-xs px-2 py-0.5 rounded-md border font-mono shrink-0">Pelican</span>
                 </div>
-                <p class="text-slate-400 text-sm mt-1.5 leading-relaxed">
-                    A collection of jokes I like, this is in Bulgarian, also provides an API for random jokes.
+                <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                    A collection of Bulgarian jokes I like, with a JSON API for random jokes.
                 </p>
             </a>
 
-            <a href="https://trakt.masoko.net" target="_blank" rel="noopener noreferrer" 
-               class="block p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-600 hover:bg-slate-900 transition-all duration-200 group">
-                <div class="flex justify-between items-start">
-                    <h2 class="font-medium text-white group-hover:text-sky-400 transition-colors">🍿 trakt.masoko.net</h2>
-                    <span class="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded-md font-mono">Python / Flask</span>
+            <a href="https://trakt.masoko.net" target="_blank" rel="noopener noreferrer"
+               class="card block p-4 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 hover:bg-slate-900/75 group">
+                <div class="flex justify-between items-start gap-3">
+                    <h2 class="font-semibold text-white group-hover:text-sky-400 transition-colors text-sm">trakt.masoko.net</h2>
+                    <span class="tag-python text-xs px-2 py-0.5 rounded-md border font-mono shrink-0">Python / Flask</span>
                 </div>
-                <p class="text-slate-400 text-sm mt-1.5 leading-relaxed">
-                    History of my watched movies and TV shows, using data from the Trakt API. Provides stats, charts and insights about my viewing habits and preferences.
+                <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                    Watch history, stats, and charts from the Trakt API — movies and TV shows with insights on viewing habits and preferences.
                 </p>
             </a>
 
-            <a href="https://links.masoko.net" target="_blank" rel="noopener noreferrer" 
-               class="block p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-600 hover:bg-slate-900 transition-all duration-200 group">
-                <div class="flex justify-between items-start">
-                    <h2 class="font-medium text-white group-hover:text-sky-400 transition-colors">🍿 trakt.masoko.net</h2>
-                    <span class="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded-md font-mono">Python / Flask</span>
+            <a href="https://links.masoko.net" target="_blank" rel="noopener noreferrer"
+               class="card block p-4 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 hover:bg-slate-900/75 group">
+                <div class="flex justify-between items-start gap-3">
+                    <h2 class="font-semibold text-white group-hover:text-sky-400 transition-colors text-sm">links.masoko.net</h2>
+                    <span class="tag-slate text-xs px-2 py-0.5 rounded-md border font-mono shrink-0">Linkding</span>
                 </div>
-                <p class="text-slate-400 text-sm mt-1.5 leading-relaxed">
-                    My publick bookmark collection, powered by the open source project Linkding. I use it to save and organize links to articles, projects, tools and resources that I find interesting and want to revisit later.
+                <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                    Public bookmark collection powered by Linkding — articles, projects, tools and resources I want to revisit.
                 </p>
             </a>
 
-            <div class="text-xs font-semibold tracking-wider text-slate-500 uppercase pt-6 pl-1">
-                Where to find me
+            <div class="section-rule pt-4 pb-0.5">
+                <span class="text-xs font-semibold tracking-widest text-slate-500 uppercase">Connect</span>
             </div>
 
-            <a href="https://github.com/hjelev" target="_blank" rel="noopener noreferrer" 
-               class="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/40 border border-slate-800/80 hover:border-slate-700 hover:bg-slate-900/80 text-sm font-medium transition-all duration-150">
-                <span class="flex items-center gap-3">💻 GitHub Profile</span>
-                <span class="text-slate-500 text-xs">→</span>
+            <a href="https://github.com/hjelev" target="_blank" rel="noopener noreferrer"
+               class="card flex items-center justify-between p-3.5 rounded-xl bg-slate-900/40 border border-slate-800/80 hover:border-slate-700 hover:bg-slate-900/70 text-sm font-medium group">
+                <span class="flex items-center gap-3 text-slate-200">
+                    <svg class="w-4 h-4 text-slate-400 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                    </svg>
+                    GitHub
+                </span>
+                <svg class="w-3.5 h-3.5 text-slate-500 arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                </svg>
             </a>
 
-            <a href="https://www.linkedin.com/in/hristojelev/" target="_blank" rel="noopener noreferrer" 
-               class="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/40 border border-slate-800/80 hover:border-slate-700 hover:bg-slate-900/80 text-sm font-medium transition-all duration-150">
-                <span class="flex items-center gap-3">👔 LinkedIn Professional</span>
-                <span class="text-slate-500 text-xs">→</span>
+            <a href="https://www.linkedin.com/in/hristojelev/" target="_blank" rel="noopener noreferrer"
+               class="card flex items-center justify-between p-3.5 rounded-xl bg-slate-900/40 border border-slate-800/80 hover:border-slate-700 hover:bg-slate-900/70 text-sm font-medium group">
+                <span class="flex items-center gap-3 text-slate-200">
+                    <svg class="w-4 h-4 text-slate-400 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    LinkedIn
+                </span>
+                <svg class="w-3.5 h-3.5 text-slate-500 arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                </svg>
             </a>
 
         </section>
     </main>
 
-    <footer class="w-full text-center text-xs text-slate-600 mt-12">
-        <p>&copy; 2025 Hristo Zhelev. Hosted securely on GitHub Pages.</p>
+    <footer class="w-full text-center text-xs text-slate-600 mt-12 pb-2">
+        <p>&copy; 2026 Hristo Zhelev &middot; Hosted on GitHub Pages</p>
     </footer>
 
 </body>
