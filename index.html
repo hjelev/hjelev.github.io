@@ -2,364 +2,395 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hristo Zhelev — Developer Portfolio</title>
-    <meta name="description" content="Hristo Zhelev — systems, tools and infrastructure. Rust TUIs, Home Assistant integrations, dashboards and side projects.">
-    <meta name="theme-color" content="#eef2f7" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#080e1c" media="(prefers-color-scheme: dark)">
+    <meta name="description" content="Hristo Zhelev builds terminal apps, Home Assistant integrations, dashboards and self-hosted side projects.">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1a1d23" media="(prefers-color-scheme: dark)">
     <meta property="og:title" content="Hristo Zhelev — Developer Portfolio">
-    <meta property="og:description" content="Systems · Tools · Infrastructure. Rust TUIs, Home Assistant integrations, dashboards and side projects.">
+    <meta property="og:description" content="Terminal apps, Home Assistant integrations, dashboards and self-hosted side projects.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://avatars.githubusercontent.com/u/12294475?v=4">
-    <link rel="icon" href="https://avatars.githubusercontent.com/u/12294475?v=4">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta property="og:url" content="https://masoko.net/">
+    <meta property="og:image" content="https://masoko.net/assets/og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="assets/avatar.webp" type="image/webp">
+    <link rel="preload" href="assets/fonts/mona-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
     <script defer src="https://m.masoko.net/core-util" data-website-id="013c7718-45c7-48bc-a554-5926eaf97fcb"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        @font-face {
+            font-family: 'Mona Sans';
+            src: url('assets/fonts/mona-sans-latin.woff2') format('woff2');
+            font-weight: 200 900;
+            font-stretch: 75% 125%;
+            font-display: swap;
+        }
 
-        /* Light theme (default) */
         :root {
-            color-scheme: light dark;
-            --bg-base: #eef2f7;
-            --glow-cyan: rgba(56,189,248,0.20);
-            --glow-indigo: rgba(99,102,241,0.14);
-            --glow-cyan-soft: rgba(56,189,248,0.12);
-            --dot-color: rgba(100,116,139,0.12);
-            --card-bg: rgba(255,255,255,0.70);
-            --card-shadow: 0 8px 32px rgba(15,23,42,0.12);
-            --name-from: #0f172a;
-            --name-via: #0369a1;
-            --name-to: #4338ca;
-            --avatar-glow: rgba(56,189,248,0.28);
-            --rule-line: rgba(100,116,139,0.30);
+            --paper: #fff;
+            --ink: #15181e;
+            --quiet: #5d6470;
+            --c: #1f62c9;          /* colour of the selected project */
+            --ci: #fff;            /* text colour on top of it */
+            --ease: cubic-bezier(.2, .8, .2, 1);
+        }
+        @media (prefers-color-scheme: dark) {
+            :root { --paper: #1a1d23; --ink: #f1f3f6; --quiet: #9aa2af; }
         }
 
-        /* Dark theme — follows system setting */
-        @media (prefers-color-scheme: dark) {
+        *, *::before, *::after { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font: 450 1rem/1.5 'Mona Sans', system-ui, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, p, ul { margin: 0; padding: 0; }
+        ul { list-style: none; }
+        a { color: inherit; }
+        img { display: block; max-width: 100%; height: auto; }
+
+        /* ---------- Header and footer ---------- */
+        .intro { display: grid; grid-template-columns: auto 1fr; align-items: center; column-gap: 18px; }
+        .intro img { width: 72px; height: 72px; border-radius: 50%; }
+        h1 { font-size: clamp(2rem, 8vw, 2.75rem); line-height: 1; font-weight: 800; font-stretch: 112%; letter-spacing: -.025em; }
+        .intro p { grid-column: 1 / -1; margin-top: 18px; max-width: 36ch; font-size: 1.125rem; line-height: 1.4; color: var(--quiet); text-wrap: balance; }
+        h2 { font-size: .9375rem; line-height: 1.4; font-weight: 500; color: var(--quiet); }
+
+        .social { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+        .social a { display: inline-flex; align-items: center; gap: 8px; padding: 6px 0; font-weight: 600; text-decoration: none; }
+        .social a:hover { text-decoration: underline; text-underline-offset: 4px; }
+        .social svg { width: 18px; height: 18px; fill: currentColor; }
+        .fine { margin-top: 8px; font-size: .875rem; color: var(--quiet); }
+        .hint { display: none; }
+
+        /* ---------- Projects: full-bleed colour bands by default (touch and small screens) ---------- */
+        .side { padding: 0; }
+        .intro, h2, footer { margin-inline: 24px; }
+        .intro { padding-top: 40px; }
+        h2 { padding: 44px 0 12px; }
+        footer { padding: 40px 0 32px; }
+
+        .project { background: var(--pc); color: var(--pi); overflow: hidden; }
+        .row { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0 16px; padding: 32px 24px 0; text-decoration: none; }
+        .name { font-size: 1.625rem; line-height: 1.15; font-weight: 760; font-stretch: 108%; letter-spacing: -.02em; }
+        .tech { font-size: .9375rem; }
+        .plate { padding: 10px 24px 0; }
+        .desc { max-width: 48ch; font-size: 1.0625rem; line-height: 1.45; text-wrap: pretty; }
+        .links { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; margin-top: 18px; }
+        .visit { padding: 9px 16px 10px; border-radius: 99px; background: var(--pi); color: var(--pc); font-weight: 650; line-height: 1.3; text-decoration: none; }
+        .source { padding: 8px 0; font-weight: 600; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+        .visit:hover, .source:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+        .shot { display: block; margin-top: 28px; }
+        .shot img { width: 100%; border-radius: 8px; }
+        .shot-whole { padding-bottom: 32px; }
+        .shot-sink img { border-radius: 0; }
+        .shot-bleed { margin-right: -24px; }
+        .shot-bleed img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: 0 0; border-radius: 8px 0 0 0; }
+
+        @media (min-width: 720px) {
+            .row { padding-inline: 48px; padding-top: 48px; }
+            .plate { padding-inline: 48px; }
+            .shot-bleed { margin-right: -48px; }
+            .intro, h2, footer { margin-inline: 48px; }
+        }
+
+        a:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; border-radius: 4px; }
+
+        /* ---------- Two panes: list on the left, preview on the right ---------- */
+        @media (min-width: 960px) and (hover: hover) {
             :root {
-                --bg-base: #080e1c;
-                --glow-cyan: rgba(56,189,248,0.08);
-                --glow-indigo: rgba(99,102,241,0.06);
-                --glow-cyan-soft: rgba(56,189,248,0.04);
-                --dot-color: rgba(148,163,184,0.07);
-                --card-bg: rgba(15,23,42,0.45);
-                --card-shadow: 0 8px 32px rgba(0,0,0,0.4);
-                --name-from: #fff;
-                --name-via: #bae6fd;
-                --name-to: #c7d2fe;
-                --avatar-glow: rgba(56,189,248,0.22);
-                --rule-line: rgba(148,163,184,0.12);
+                --split: clamp(470px, 38vw, 640px);
+                --gutter: clamp(28px, 3vw, 52px);
+                --pad: clamp(36px, 4.2vw, 80px);
+                --row: clamp(32px, 4.5vh, 52px);
+                --bend: 14px;
             }
-        }
+            .side { width: var(--split); min-height: 100vh; display: flex; flex-direction: column; padding-left: var(--gutter); }
+            .intro, h2, footer { margin-inline: 0; }
+            .intro { padding: clamp(24px, 4.4vh, 52px) 24px 0 0; }
+            .intro img { width: 64px; height: 64px; }
+            .intro p { margin-top: clamp(12px, 1.8vh, 20px); }
+            h2 { padding: clamp(14px, 2.8vh, 32px) 0 clamp(4px, .8vh, 10px); }
+            footer { margin-top: auto; padding: clamp(16px, 2.6vh, 32px) 24px clamp(18px, 3vh, 36px) 0; }
 
-        .bg-scene {
-            background:
-                radial-gradient(ellipse 90% 55% at 50% -5%, var(--glow-cyan) 0%, transparent 65%),
-                radial-gradient(ellipse 55% 40% at 85% 85%, var(--glow-indigo) 0%, transparent 60%),
-                radial-gradient(ellipse 40% 30% at 10% 60%, var(--glow-cyan-soft) 0%, transparent 60%),
-                var(--bg-base);
-        }
+            .stage { position: fixed; inset: 0 0 0 var(--split); background: var(--c); transition: background-color .35s var(--ease); }
 
-        /* faint dot grid overlay */
-        .bg-scene::before {
-            content: '';
-            position: fixed; inset: 0; pointer-events: none;
-            background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
-            background-size: 28px 28px;
-            mask-image: radial-gradient(ellipse 70% 50% at 50% 0%, black 0%, transparent 80%);
-            -webkit-mask-image: radial-gradient(ellipse 70% 50% at 50% 0%, black 0%, transparent 80%);
-        }
+            .projects { position: relative; }
+            /* the selection: a tab that slides along the list and joins the preview */
+            .cursor {
+                position: absolute; left: -16px; right: -1px; top: 0; height: var(--row);
+                border-radius: 10px 0 0 10px;
+                background: var(--c);
+                transform: translateY(var(--y, 0));
+                display: none;
+            }
+            .js .cursor { display: block; }
+            .ready .cursor { transition: transform .28s var(--ease), background-color .35s var(--ease); }
+            .cursor::before, .cursor::after {
+                content: ''; position: absolute; right: -1px; width: calc(var(--bend) + 1px); height: calc(var(--bend) + 1px);
+                background: inherit;
+            }
+            .cursor::before { bottom: calc(100% - 1px); -webkit-mask: radial-gradient(circle at 0 0, #0000 calc(var(--bend) - .5px), #000 var(--bend)); mask: radial-gradient(circle at 0 0, #0000 calc(var(--bend) - .5px), #000 var(--bend)); }
+            .cursor::after { top: calc(100% - 1px); -webkit-mask: radial-gradient(circle at 0 100%, #0000 calc(var(--bend) - .5px), #000 var(--bend)); mask: radial-gradient(circle at 0 100%, #0000 calc(var(--bend) - .5px), #000 var(--bend)); }
 
-        .avatar-ring {
-            background: conic-gradient(from var(--ring-angle, 180deg), #38bdf8, #6366f1, #a855f7, #38bdf8);
-            border-radius: 9999px;
-            padding: 2px;
-            animation: spin-ring 8s linear infinite;
-        }
-        @property --ring-angle {
-            syntax: '<angle>';
-            initial-value: 180deg;
-            inherits: false;
-        }
-        @keyframes spin-ring {
-            to { --ring-angle: 540deg; }
-        }
-        .avatar-glow {
-            position: absolute; inset: -18px; border-radius: 9999px; z-index: -1;
-            background: radial-gradient(circle, var(--avatar-glow) 0%, transparent 70%);
-            filter: blur(6px);
-        }
+            .project { background: none; color: inherit; overflow: visible; }
+            .row { position: relative; height: var(--row); padding: 0 24px 0 0; align-items: center; flex-wrap: nowrap; white-space: nowrap; outline-offset: -5px; transition: color .2s; }
+            .row::before { content: ''; position: absolute; inset: 0 0 0 -16px; }
+            .name { position: relative; font-size: clamp(1.125rem, 2.35vh, 1.4375rem); font-weight: 560; font-stretch: 92%; letter-spacing: -.012em; transition: font-stretch .3s var(--ease), font-weight .3s var(--ease); }
+            .tech { position: relative; color: var(--quiet); transition: color .2s; }
+            .is-active .row { color: var(--pi); }
+            .is-active .name { font-weight: 720; font-stretch: 112%; }
+            .is-active .tech { color: inherit; }
+            .row:focus-visible { outline: 2px solid currentColor; outline-offset: -4px; border-radius: 8px; margin-left: -16px; padding-left: 16px; }
+            .row:focus-visible::before { left: 0; }
 
-        .name-gradient {
-            background: linear-gradient(to right, var(--name-from) 30%, var(--name-via) 70%, var(--name-to));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
+            .plate {
+                position: fixed; inset: 0 0 0 var(--split);
+                display: flex; flex-direction: column;
+                padding: clamp(36px, 7vh, 84px) var(--pad) 0;
+                color: var(--pi);
+                visibility: hidden; overflow: hidden;
+            }
+            .is-active .plate { visibility: visible; }
+            .desc { max-width: 34ch; font-size: clamp(1.375rem, 1.95vw, 2rem); line-height: 1.26; font-weight: 540; letter-spacing: -.016em; }
+            .links { margin-top: clamp(18px, 2.8vh, 30px); }
+            .shot { flex: 1; min-height: 0; margin-top: clamp(28px, 5vh, 60px); }
+            .shot-whole { display: flex; align-items: center; padding-bottom: var(--pad); }
+            .shot-whole img { width: auto; height: auto; max-height: 100%; }
+            .shot-sink { display: flex; align-items: flex-end; }
+            .shot-bleed { margin-right: calc(var(--pad) * -1); }
+            .shot-bleed img { height: 100%; aspect-ratio: auto; border-radius: 12px 0 0 0; }
+            .is-active .shot img { animation: arrive .45s var(--ease); }
+            @keyframes arrive { from { transform: translateX(36px); } }
 
-        .card {
-            position: relative;
-            background: var(--card-bg);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            transition: background 0.2s, border-color 0.2s, box-shadow 0.25s, transform 0.25s ease;
-        }
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 0 1px rgba(56,189,248,0.18), var(--card-shadow);
-        }
-        .card:active { transform: translateY(0); }
+            /* without JavaScript, hover and focus still switch the preview */
+            html:not(.js) .is-active .row, html:not(.js) .project:is(:hover, :focus-within) .row { color: var(--pi); background: var(--pc); }
+            html:not(.js) .row { margin-left: -16px; padding-left: 16px; }
+            html:not(.js) .project:is(:hover, :focus-within) .plate { visibility: visible; z-index: 1; background: var(--pc); }
 
-        .arrow { transition: transform 0.18s ease; }
-        a:hover .arrow { transform: translateX(3px); }
-
-        .tag-rust    { background: rgba(249,115,22,0.14); color: #c2410c; border-color: rgba(249,115,22,0.30); }
-        .tag-python  { background: rgba(59,130,246,0.14); color: #1d4ed8; border-color: rgba(59,130,246,0.30); }
-        .tag-grafana { background: rgba(202,138,4,0.14);  color: #a16207; border-color: rgba(202,138,4,0.30);  }
-        .tag-green   { background: rgba(22,163,74,0.14);  color: #15803d; border-color: rgba(22,163,74,0.30);   }
-        .tag-slate   { background: rgba(100,116,139,0.12); color: #475569; border-color: rgba(100,116,139,0.25); }
-
-        @media (prefers-color-scheme: dark) {
-            .tag-rust    { background: rgba(249,115,22,0.12); color: #fb923c; border-color: rgba(249,115,22,0.25); }
-            .tag-python  { background: rgba(59,130,246,0.12); color: #60a5fa; border-color: rgba(59,130,246,0.25); }
-            .tag-grafana { background: rgba(251,191,36,0.10); color: #fbbf24; border-color: rgba(251,191,36,0.22); }
-            .tag-green   { background: rgba(34,197,94,0.10);  color: #4ade80; border-color: rgba(34,197,94,0.22);  }
-            .tag-slate   { background: rgba(148,163,184,0.08); color: #94a3b8; border-color: rgba(148,163,184,0.18); }
+            .js .hint { display: block; margin-top: 4px; font-size: .875rem; color: var(--quiet); }
+            .fine { margin-top: 4px; }
         }
-
-        .section-rule {
-            display: flex; align-items: center; gap: 10px;
-        }
-        .section-rule::after {
-            content: ''; flex: 1; height: 1px;
-            background: linear-gradient(to right, var(--rule-line), transparent);
-        }
-
-        /* staggered entrance */
-        .reveal {
-            opacity: 0;
-            transform: translateY(12px);
-            animation: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-            animation-delay: calc(var(--i, 0) * 70ms);
-        }
-        @keyframes rise {
-            to { opacity: 1; transform: translateY(0); }
+        @media (min-width: 960px) and (hover: hover) and (max-height: 800px) {
+            h1 { font-size: 2.25rem; }
+            .intro p { font-size: 1rem; }
+            .js .hint { display: none; }
+            h2 { padding-top: 12px; }
+            footer { padding: 12px 0; }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .reveal { animation: none; opacity: 1; transform: none; }
-            .avatar-ring { animation: none; }
-            .card, .arrow { transition: none; }
-            .card:hover { transform: none; }
+            *, *::before, *::after { transition: none !important; animation: none !important; }
         }
     </style>
 </head>
-<body class="bg-scene text-slate-700 dark:text-slate-200 min-h-screen flex flex-col py-16 px-4">
-
-    <main class="max-w-lg w-full mx-auto flex-grow flex flex-col items-center">
-
-        <header class="text-center mb-12 reveal" style="--i:0">
-            <div class="relative w-[98px] h-[98px] mx-auto mb-5">
-                <div class="avatar-glow"></div>
-                <div class="avatar-ring w-full h-full flex items-center justify-center">
-                    <div class="w-[90px] h-[90px] rounded-full overflow-hidden bg-slate-900">
-                        <img src="https://avatars.githubusercontent.com/u/12294475?v=4"
-                             alt="Hristo Zhelev"
-                             class="w-full h-full object-cover">
-                    </div>
-                </div>
-            </div>
-            <h1 class="name-gradient text-3xl font-extrabold tracking-tight">Hristo Zhelev</h1>
-            <p class="text-slate-500 dark:text-slate-400 text-sm mt-2 tracking-wide">Systems · Tools · Infrastructure</p>
-            <div class="flex items-center justify-center gap-2 mt-3">
-                <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span class="text-xs text-slate-500">Building in public</span>
-            </div>
+<body>
+    <div class="stage" aria-hidden="true"></div>
+    <div class="side">
+        <header class="intro">
+            <img src="assets/avatar.webp" width="72" height="72" alt="">
+            <h1>Hristo Zhelev</h1>
+            <p>I build terminal apps, home automation tools and small self-hosted sites.</p>
         </header>
 
-        <section class="w-full space-y-2.5">
+        <main class="projects">
+            <div class="cursor" aria-hidden="true"></div>
+            <section aria-labelledby="featured">
+                <h2 id="featured">Featured projects</h2>
+                <ul>
+                    <li class="project is-active" style="--pc:#1f62c9;--pi:#fff">
+                        <a class="row" href="https://sb.masoko.net" target="_blank" rel="noopener noreferrer"><span class="name">Shell Buddy</span><span class="tech">Rust</span></a>
+                        <div class="plate">
+                            <p class="desc">A fast, single-binary file manager for the terminal, with previews, archives, search, remote mounts and Git workflows.</p>
+                            <p class="links">
+                                <a class="visit" href="https://sb.masoko.net" target="_blank" rel="noopener noreferrer" tabindex="-1">sb.masoko.net</a>
+                                <a class="source" href="https://github.com/hjelev/sb" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+                            </p>
+                            <a class="shot shot-whole" href="https://sb.masoko.net" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/shots/shell-buddy.webp" width="923" height="545" alt="Shell Buddy previewing a landscape photo next to a file list in the terminal" fetchpriority="high" decoding="async"></a>
+                        </div>
+                    </li>
+                    <li class="project" style="--pc:#f08a3c;--pi:#1f1003">
+                        <a class="row" href="https://masoko.net/lyrtui" target="_blank" rel="noopener noreferrer"><span class="name">Lyrtui</span><span class="tech">Rust</span></a>
+                        <div class="plate">
+                            <p class="desc">A keyboard and mouse driven terminal player for Lyrion Music Server. Browse your library, radio and streaming apps with inline album art and colors that adapt to it.</p>
+                            <p class="links">
+                                <a class="visit" href="https://masoko.net/lyrtui" target="_blank" rel="noopener noreferrer" tabindex="-1">masoko.net/lyrtui</a>
+                                <a class="source" href="https://github.com/hjelev/lyrtui" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+                            </p>
+                            <a class="shot shot-whole" href="https://masoko.net/lyrtui" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/shots/lyrtui.webp" width="983" height="427" alt="Lyrtui showing large album art beside the play queue in the terminal" loading="lazy" decoding="async"></a>
+                        </div>
+                    </li>
+                    <li class="project" style="--pc:#bf2149;--pi:#fff">
+                        <a class="row" href="https://masoko.net/rpi-mqtt-monitor" target="_blank" rel="noopener noreferrer"><span class="name">RPi MQTT Monitor</span><span class="tech">Python</span></a>
+                        <div class="plate">
+                            <p class="desc">The easiest way to track and control the health and performance of a Raspberry Pi or Ubuntu system in Home Assistant, over MQTT.</p>
+                            <p class="links">
+                                <a class="visit" href="https://masoko.net/rpi-mqtt-monitor" target="_blank" rel="noopener noreferrer" tabindex="-1">masoko.net/rpi-mqtt-monitor</a>
+                                <a class="source" href="https://github.com/hjelev/rpi-mqtt-monitor" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+                            </p>
+                            <a class="shot shot-sink" href="https://masoko.net/rpi-mqtt-monitor" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/shots/rpi-mqtt-monitor.webp" width="992" height="400" alt="Home Assistant cards with CPU, memory and network readings plus restart and shutdown controls" loading="lazy" decoding="async"></a>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section aria-labelledby="side">
+                <h2 id="side">Side projects</h2>
+                <ul>
+                    <li class="project" style="--pc:#8ccbee;--pi:#05283f">
+                        <a class="row" href="https://more.masoko.net" target="_blank" rel="noopener noreferrer"><span class="name">Black Sea Water Temperature</span><span class="tech">HTML, JavaScript</span></a>
+                        <div class="plate">
+                            <p class="desc">Live and historical Black Sea water temperatures from Bulgaria’s National Institute of Meteorology, with seasonal trends.</p>
+                            <p class="links">
+                                <a class="visit" href="https://more.masoko.net" target="_blank" rel="noopener noreferrer" tabindex="-1">more.masoko.net</a>
+                                <a class="source" href="https://github.com/hjelev/Black_Sea_water_temperature" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+                            </p>
+                            <a class="shot shot-bleed" href="https://more.masoko.net" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/shots/more.webp" width="1500" height="1000" alt="Map of the Black Sea with current water temperatures along the coast" loading="lazy" decoding="async"></a>
+                        </div>
+                    </li>
+                    <li class="project" style="--pc:#ffc928;--pi:#10233a">
+                        <a class="row" href="https://fun.masoko.net" target="_blank" rel="noopener noreferrer"><span class="name">fun.masoko.net</span><span class="tech">Pelican</span></a>
+                        <div class="plate">
+                            <p class="desc">A collection of Bulgarian jokes I like, with a JSON API for random jokes.</p>
+                            <p class="links">
+                                <a class="visit" href="https://fun.masoko.net" target="_blank" rel="noopener noreferrer" tabindex="-1">fun.masoko.net</a>
+                                <a class="source" href="https://github.com/hjelev/fun.masoko.net" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+                            </p>
+                            <a class="shot shot-bleed" href="https://fun.masoko.net" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/shots/fun.webp" width="1500" height="1000" alt="Bulgarian joke site with the joke of the day printed on a paper roll" loading="lazy" decoding="async"></a>
+                        </div>
+                    </li>
+                    <li class="project" style="--pc:#5b2a86;--pi:#fff">
+                        <a class="row" href="https://trakt.masoko.net" target="_blank" rel="noopener noreferrer"><span class="name">trakt.masoko.net</span><span class="tech">Python, Flask</span></a>
+                        <div class="plate">
+                            <p class="desc">My watch history from the Trakt API, with stats and charts on viewing habits across movies and TV shows.</p>
+                            <p class="links">
+                                <a class="visit" href="https://trakt.masoko.net" target="_blank" rel="noopener noreferrer" tabindex="-1">trakt.masoko.net</a>
+                                <a class="source" href="https://github.com/hjelev/trakt-history" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+                            </p>
+                            <a class="shot shot-bleed" href="https://trakt.masoko.net" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/shots/trakt.webp" width="1500" height="1000" alt="Poster gallery of recently watched films and series" loading="lazy" decoding="async"></a>
+                        </div>
+                    </li>
+                    <li class="project" style="--pc:#c3bdff;--pi:#1a1660">
+                        <a class="row" href="https://links.masoko.net" target="_blank" rel="noopener noreferrer"><span class="name">links.masoko.net</span><span class="tech">Linkding</span></a>
+                        <div class="plate">
+                            <p class="desc">My public bookmarks: articles, projects, tools and resources I want to revisit.</p>
+                            <p class="links">
+                                <a class="visit" href="https://links.masoko.net" target="_blank" rel="noopener noreferrer" tabindex="-1">links.masoko.net</a>
+                            </p>
+                            <a class="shot shot-bleed" href="https://links.masoko.net" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/shots/links.webp" width="1500" height="1000" alt="List of shared bookmarks with tags" loading="lazy" decoding="async"></a>
+                        </div>
+                    </li>
+                    <li class="project" style="--pc:#0b7350;--pi:#fff">
+                        <a class="row" href="https://masoko.net/bgtv-stremio/" target="_blank" rel="noopener noreferrer"><span class="name">BG Live TV for Stremio</span><span class="tech">Node.js</span></a>
+                        <div class="plate">
+                            <p class="desc">A self-hosted Stremio addon with 65+ Bulgarian live TV channels, including bTV, BNT, Nova and Eurosport. Fresh HLS streams and a zero-config Docker setup.</p>
+                            <p class="links">
+                                <a class="visit" href="https://masoko.net/bgtv-stremio/" target="_blank" rel="noopener noreferrer" tabindex="-1">masoko.net/bgtv-stremio</a>
+                                <a class="source" href="https://github.com/hjelev/bgtv-stremio" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+                            </p>
+                            <a class="shot shot-whole" href="https://masoko.net/bgtv-stremio/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/shots/bgtv-stremio.webp" width="1600" height="900" alt="Logos of the Bulgarian TV channels in the addon" loading="lazy" decoding="async"></a>
+                        </div>
+                    </li>
+                    <li class="project" style="--pc:#f4b3c8;--pi:#47102a">
+                        <a class="row" href="https://masoko.net/lyr-radio-browser/" target="_blank" rel="noopener noreferrer"><span class="name">Lyrion Radio Browser</span><span class="tech">Perl</span></a>
+                        <div class="plate">
+                            <p class="desc">A Lyrion Music Server plugin for the community-driven Radio Browser directory. Find and stream internet radio by popularity, genre or country.</p>
+                            <p class="links">
+                                <a class="visit" href="https://masoko.net/lyr-radio-browser/" target="_blank" rel="noopener noreferrer" tabindex="-1">masoko.net/lyr-radio-browser</a>
+                                <a class="source" href="https://github.com/hjelev/lyr-radio-browser" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+                            </p>
+                            <a class="shot shot-bleed" href="https://masoko.net/lyr-radio-browser/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/shots/lyr-radio-browser.webp" width="1500" height="1000" alt="Lyrion Radio Browser plugin documentation" loading="lazy" decoding="async"></a>
+                        </div>
+                    </li>
+                    <li class="project" style="--pc:#114d3a;--pi:#fff">
+                        <a class="row" href="https://blog.masoko.net" target="_blank" rel="noopener noreferrer"><span class="name">blog.masoko.net</span><span class="tech">Jekyll</span></a>
+                        <div class="plate">
+                            <p class="desc">Tech blog and notes since 2018: Linux administration, Raspberry Pi projects, Python, networking, home automation and multi-room audio.</p>
+                            <p class="links">
+                                <a class="visit" href="https://blog.masoko.net" target="_blank" rel="noopener noreferrer" tabindex="-1">blog.masoko.net</a>
+                                <a class="source" href="https://github.com/hjelev/blog" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+                            </p>
+                            <a class="shot shot-bleed" href="https://blog.masoko.net" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/shots/blog.webp" width="1500" height="1000" alt="Masoko’s Blog and Notes home page" loading="lazy" decoding="async"></a>
+                        </div>
+                    </li>
+                    <li class="project" style="--pc:#c43d06;--pi:#fff">
+                        <a class="row" href="https://cli.masoko.net" target="_blank" rel="noopener noreferrer"><span class="name">The Terminal Index</span><span class="tech">Astro</span></a>
+                        <div class="plate">
+                            <p class="desc">A searchable, community-submitted directory of command-line tools. Browse by category, language and tag, with user ratings.</p>
+                            <p class="links">
+                                <a class="visit" href="https://cli.masoko.net" target="_blank" rel="noopener noreferrer" tabindex="-1">cli.masoko.net</a>
+                                <a class="source" href="https://github.com/hjelev/cli" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+                            </p>
+                            <a class="shot shot-bleed" href="https://cli.masoko.net" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/shots/cli.webp" width="1500" height="1000" alt="The Terminal Index home page with a wall of command-line tool logos" loading="lazy" decoding="async"></a>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </main>
 
-            <div class="section-rule pt-1 pb-0.5 reveal" style="--i:1">
-                <span class="text-xs font-semibold tracking-widest text-slate-500 uppercase">Featured Projects</span>
-            </div>
+        <footer>
+            <nav class="social" aria-label="Connect">
+                <a href="https://github.com/hjelev" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>GitHub</a>
+                <a href="https://www.youtube.com/@HristoJelev" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>YouTube</a>
+                <a href="https://www.linkedin.com/in/hristojelev/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+            </nav>
+            <p class="hint">Use the up and down arrow keys to browse, Enter to open.</p>
+            <p class="fine">&copy; 2026 Hristo Zhelev. Hosted on GitHub Pages.</p>
+        </footer>
+    </div>
 
-            <a href="https://sb.masoko.net" target="_blank" rel="noopener noreferrer"
-               class="card block p-4 rounded-xl border border-slate-300 hover:border-slate-400 dark:border-slate-800 dark:hover:border-slate-700 group reveal" style="--i:2">
-                <div class="flex justify-between items-start gap-3">
-                    <h2 class="font-semibold text-slate-900 dark:text-white group-hover:text-sky-400 transition-colors text-sm">Shell Buddy</h2>
-                    <span class="tag-rust text-xs px-2 py-0.5 rounded-md border font-mono shrink-0">Rust / TUI</span>
-                </div>
-                <p class="text-slate-600 dark:text-slate-400 text-xs mt-2 leading-relaxed">
-                    Fast, single-binary TUI file manager built on ratatui + crossterm — snappy local navigation with previews, archives, search, remote mounts, and Git workflows.
-                </p>
-            </a>
+    <script>
+        (() => {
+            document.documentElement.classList.add('js');
+            const projects = [...document.querySelectorAll('.project')];
+            const rows = projects.map(p => p.querySelector('.row'));
+            const list = document.querySelector('.projects');
+            const cursor = document.querySelector('.cursor');
+            const twoPane = matchMedia('(min-width: 960px) and (hover: hover)');
+            let active = 0, timer;
 
-            <a href="https://masoko.net/lyrtui" target="_blank" rel="noopener noreferrer"
-               class="card block p-4 rounded-xl border border-slate-300 hover:border-slate-400 dark:border-slate-800 dark:hover:border-slate-700 group reveal" style="--i:3">
-                <div class="flex justify-between items-start gap-3">
-                    <h2 class="font-semibold text-slate-900 dark:text-white group-hover:text-sky-400 transition-colors text-sm">Lyrtui</h2>
-                    <span class="tag-rust text-xs px-2 py-0.5 rounded-md border font-mono shrink-0">Rust / TUI</span>
-                </div>
-                <p class="text-slate-600 dark:text-slate-400 text-xs mt-2 leading-relaxed">
-                    Keyboard & mouse-driven terminal UI for Lyrion Music Server — browse your library, internet radio, and streaming apps with inline album art and adaptive accent colors.
-                </p>
-            </a>
+            const place = () => {
+                const y = rows[active].getBoundingClientRect().top - list.getBoundingClientRect().top;
+                cursor.style.setProperty('--y', y + 'px');
+            };
+            const select = i => {
+                clearTimeout(timer);
+                projects[active].classList.remove('is-active');
+                active = i;
+                projects[i].classList.add('is-active');
+                document.documentElement.style.setProperty('--c', projects[i].style.getPropertyValue('--pc'));
+                place();
+            };
 
-            <a href="https://masoko.net/rpi-mqtt-monitor" target="_blank" rel="noopener noreferrer"
-               class="card block p-4 rounded-xl border border-slate-300 hover:border-slate-400 dark:border-slate-800 dark:hover:border-slate-700 group reveal" style="--i:4">
-                <div class="flex justify-between items-start gap-3">
-                    <h2 class="font-semibold text-slate-900 dark:text-white group-hover:text-sky-400 transition-colors text-sm">RPi MQTT Monitor</h2>
-                    <span class="tag-python text-xs px-2 py-0.5 rounded-md border font-mono shrink-0">Python / HA</span>
-                </div>
-                <p class="text-slate-600 dark:text-slate-400 text-xs mt-2 leading-relaxed">
-                    The easiest way to track and control a Raspberry Pi or Ubuntu system health and performance in Home Assistant via MQTT.
-                </p>
-            </a>
+            rows.forEach((row, i) => {
+                // A short delay so crossing other rows on the way to the preview doesn't change it
+                row.addEventListener('pointerenter', () => {
+                    clearTimeout(timer);
+                    timer = setTimeout(() => i !== active && select(i), 70);
+                });
+                row.addEventListener('pointerleave', () => clearTimeout(timer));
+                projects[i].addEventListener('focusin', () => i !== active && select(i));
+            });
 
-            <div class="section-rule pt-4 pb-0.5 reveal" style="--i:5">
-                <span class="text-xs font-semibold tracking-widest text-slate-500 uppercase">Side Projects</span>
-            </div>
+            addEventListener('keydown', e => {
+                if (!twoPane.matches || e.ctrlKey || e.metaKey || e.altKey || e.shiftKey) return;
+                const step = { ArrowDown: 1, j: 1, ArrowUp: -1, k: -1 }[e.key];
+                if (!step) return;
+                const onRow = rows.includes(document.activeElement);
+                const next = onRow ? active + step : active + (document.activeElement === document.body ? step : 0);
+                if (!rows[next]) return;
+                e.preventDefault();
+                rows[next].focus();
+            });
 
-            <a href="https://more.masoko.net" target="_blank" rel="noopener noreferrer"
-               class="card block p-4 rounded-xl border border-slate-300 hover:border-slate-400 dark:border-slate-800 dark:hover:border-slate-700 group reveal" style="--i:6">
-                <div class="flex justify-between items-start gap-3">
-                    <h2 class="font-semibold text-slate-900 dark:text-white group-hover:text-sky-400 transition-colors text-sm">Black Sea Water Temperature</h2>
-                    <span class="tag-grafana text-xs px-2 py-0.5 rounded-md border font-mono shrink-0">HTML / Js</span>
-                </div>
-                <p class="text-slate-600 dark:text-slate-400 text-xs mt-2 leading-relaxed">
-                    Dashboard tracking Black Sea water temperature via Bulgaria's National Institute of Meteorology — historical data, real-time updates, and seasonal trend analysis.
-                </p>
-            </a>
-
-            <a href="https://fun.masoko.net" target="_blank" rel="noopener noreferrer"
-               class="card block p-4 rounded-xl border border-slate-300 hover:border-slate-400 dark:border-slate-800 dark:hover:border-slate-700 group reveal" style="--i:7">
-                <div class="flex justify-between items-start gap-3">
-                    <h2 class="font-semibold text-slate-900 dark:text-white group-hover:text-sky-400 transition-colors text-sm">fun.masoko.net</h2>
-                    <span class="tag-green text-xs px-2 py-0.5 rounded-md border font-mono shrink-0">Pelican</span>
-                </div>
-                <p class="text-slate-600 dark:text-slate-400 text-xs mt-2 leading-relaxed">
-                    A collection of Bulgarian jokes I like, with a JSON API for random jokes.
-                </p>
-            </a>
-
-            <a href="https://trakt.masoko.net" target="_blank" rel="noopener noreferrer"
-               class="card block p-4 rounded-xl border border-slate-300 hover:border-slate-400 dark:border-slate-800 dark:hover:border-slate-700 group reveal" style="--i:8">
-                <div class="flex justify-between items-start gap-3">
-                    <h2 class="font-semibold text-slate-900 dark:text-white group-hover:text-sky-400 transition-colors text-sm">trakt.masoko.net</h2>
-                    <span class="tag-python text-xs px-2 py-0.5 rounded-md border font-mono shrink-0">Python / Flask</span>
-                </div>
-                <p class="text-slate-600 dark:text-slate-400 text-xs mt-2 leading-relaxed">
-                    Watch history, stats, and charts from the Trakt API — movies and TV shows with insights on viewing habits and preferences.
-                </p>
-            </a>
-
-            <a href="https://links.masoko.net" target="_blank" rel="noopener noreferrer"
-               class="card block p-4 rounded-xl border border-slate-300 hover:border-slate-400 dark:border-slate-800 dark:hover:border-slate-700 group reveal" style="--i:9">
-                <div class="flex justify-between items-start gap-3">
-                    <h2 class="font-semibold text-slate-900 dark:text-white group-hover:text-sky-400 transition-colors text-sm">links.masoko.net</h2>
-                    <span class="tag-slate text-xs px-2 py-0.5 rounded-md border font-mono shrink-0">Linkding</span>
-                </div>
-                <p class="text-slate-600 dark:text-slate-400 text-xs mt-2 leading-relaxed">
-                    Public bookmark collection powered by Linkding — articles, projects, tools and resources I want to revisit.
-                </p>
-            </a>
-
-            <a href="https://masoko.net/bgtv-stremio/" target="_blank" rel="noopener noreferrer"
-               class="card block p-4 rounded-xl border border-slate-300 hover:border-slate-400 dark:border-slate-800 dark:hover:border-slate-700 group reveal" style="--i:10">
-                <div class="flex justify-between items-start gap-3">
-                    <h2 class="font-semibold text-slate-900 dark:text-white group-hover:text-sky-400 transition-colors text-sm">BG Live TV for Stremio</h2>
-                    <span class="tag-green text-xs px-2 py-0.5 rounded-md border font-mono shrink-0">Node.js</span>
-                </div>
-                <p class="text-slate-600 dark:text-slate-400 text-xs mt-2 leading-relaxed">
-                    Self-hosted Stremio addon streaming 65+ Bulgarian live TV channels — BTV, BNT, Nova, Eurosport and more — with fresh HLS stream extraction and zero-config Docker setup.
-                </p>
-            </a>
-
-            <a href="https://masoko.net/lyr-radio-browser/" target="_blank" rel="noopener noreferrer"
-               class="card block p-4 rounded-xl border border-slate-300 hover:border-slate-400 dark:border-slate-800 dark:hover:border-slate-700 group reveal" style="--i:11">
-                <div class="flex justify-between items-start gap-3">
-                    <h2 class="font-semibold text-slate-900 dark:text-white group-hover:text-sky-400 transition-colors text-sm">Lyrion Radio Browser</h2>
-                    <span class="tag-slate text-xs px-2 py-0.5 rounded-md border font-mono shrink-0">Perl</span>
-                </div>
-                <p class="text-slate-600 dark:text-slate-400 text-xs mt-2 leading-relaxed">
-                    Lyrion Music Server plugin integrating the community-driven Radio Browser directory — search and stream internet radio by top stations, tag/genre or country, with OPML menu navigation and async HTTP.
-                </p>
-            </a>
-
-            <a href="https://blog.masoko.net" target="_blank" rel="noopener noreferrer"
-               class="card block p-4 rounded-xl border border-slate-300 hover:border-slate-400 dark:border-slate-800 dark:hover:border-slate-700 group reveal" style="--i:12">
-                <div class="flex justify-between items-start gap-3">
-                    <h2 class="font-semibold text-slate-900 dark:text-white group-hover:text-sky-400 transition-colors text-sm">blog.masoko.net</h2>
-                    <span class="tag-slate text-xs px-2 py-0.5 rounded-md border font-mono shrink-0">Jekyll</span>
-                </div>
-                <p class="text-slate-600 dark:text-slate-400 text-xs mt-2 leading-relaxed">
-                    Tech blog and notes since 2018 — Linux administration, Raspberry Pi projects, Python, networking, home automation and multi-room audio tutorials.
-                </p>
-            </a>
-
-            <a href="https://cli.masoko.net" target="_blank" rel="noopener noreferrer"
-               class="card block p-4 rounded-xl border border-slate-300 hover:border-slate-400 dark:border-slate-800 dark:hover:border-slate-700 group reveal" style="--i:13">
-                <div class="flex justify-between items-start gap-3">
-                    <h2 class="font-semibold text-slate-900 dark:text-white group-hover:text-sky-400 transition-colors text-sm">cli.masoko.net</h2>
-                    <span class="tag-green text-xs px-2 py-0.5 rounded-md border font-mono shrink-0">Astro</span>
-                </div>
-                <p class="text-slate-600 dark:text-slate-400 text-xs mt-2 leading-relaxed">
-                    Searchable, community-submitted directory of command-line tools — browse by category, language and tags, with user ratings.
-                </p>
-            </a>
-
-            <div class="section-rule pt-4 pb-0.5 reveal" style="--i:14">
-                <span class="text-xs font-semibold tracking-widest text-slate-500 uppercase">Connect</span>
-            </div>
-
-            <a href="https://github.com/hjelev" target="_blank" rel="noopener noreferrer"
-               class="card flex items-center justify-between p-3.5 rounded-xl border border-slate-300 hover:border-slate-400 dark:border-slate-800/80 dark:hover:border-slate-700 text-sm font-medium group reveal" style="--i:14">
-                <span class="flex items-center gap-3 text-slate-700 dark:text-slate-200">
-                    <svg class="w-4 h-4 text-slate-500 dark:text-slate-400 group-hover:text-white transition-colors shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-                    </svg>
-                    GitHub
-                </span>
-                <svg class="w-3.5 h-3.5 text-slate-500 arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-                </svg>
-            </a>
-
-            <a href="https://www.youtube.com/@HristoJelev" target="_blank" rel="noopener noreferrer"
-               class="card flex items-center justify-between p-3.5 rounded-xl border border-slate-300 hover:border-slate-400 dark:border-slate-800/80 dark:hover:border-slate-700 text-sm font-medium group reveal" style="--i:15">
-                <span class="flex items-center gap-3 text-slate-700 dark:text-slate-200">
-                    <svg class="w-4 h-4 text-slate-500 dark:text-slate-400 group-hover:text-red-500 transition-colors shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                    </svg>
-                    YouTube
-                </span>
-                <svg class="w-3.5 h-3.5 text-slate-500 arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-                </svg>
-            </a>
-
-            <a href="https://www.linkedin.com/in/hristojelev/" target="_blank" rel="noopener noreferrer"
-               class="card flex items-center justify-between p-3.5 rounded-xl border border-slate-300 hover:border-slate-400 dark:border-slate-800/80 dark:hover:border-slate-700 text-sm font-medium group reveal" style="--i:16">
-                <span class="flex items-center gap-3 text-slate-700 dark:text-slate-200">
-                    <svg class="w-4 h-4 text-slate-500 dark:text-slate-400 group-hover:text-sky-400 transition-colors shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                    LinkedIn
-                </span>
-                <svg class="w-3.5 h-3.5 text-slate-500 arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-                </svg>
-            </a>
-
-        </section>
-    </main>
-
-    <footer class="w-full text-center text-xs text-slate-500 dark:text-slate-600 mt-12 pb-2 reveal" style="--i:16">
-        <p>&copy; 2026 Hristo Zhelev &middot; Hosted on GitHub Pages</p>
-    </footer>
-
+            new ResizeObserver(place).observe(list);
+            place();
+            requestAnimationFrame(() => requestAnimationFrame(() => document.documentElement.classList.add('ready')));
+        })();
+    </script>
 </body>
 </html>
